@@ -1,11 +1,12 @@
 import React from 'react'
+import { username } from '../../../utils/env';
 import { Table, Stack, Typography, TextField, TableContainer, TableRow, TableBody, TableCell, Paper} from '@mui/material';
 
 import DiaryRow from './DiaryRow';
 
 const diaries = [
-    { date: '1/3/2023', name: 'Nguyễn Tuấn Kiệt', state: "Online", activity: "Chuyển hệ thống sang tự động" },
-    { date: '3/3/2023', name: 'Nguyễn Tuấn Kiệt', state: "Online", activity: "Tắt toàn bộ hệ thống" }
+    { date: '1/3/2023', name: username, state: "Online", activity: "Chuyển hệ thống sang tự động" },
+    { date: '3/3/2023', name: username, state: "Online", activity: "Tắt toàn bộ hệ thống" }
 ]
 
 const ControlDiary = () => {
