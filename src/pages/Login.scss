@@ -1,0 +1,49 @@
+.body-login {
+    display: flex;
+    height: calc(100vh - 100px);
+    &-left {
+        flex-basis: 70%;
+        img{
+            display: block;
+            height: 100%;
+            object-fit: cover;
+            width: 100%;
+        }
+    }
+    &-right {
+        padding: 80px 20px;
+        // text-align: center;
+        flex-basis: 30%;
+        label {
+            margin-top: 20px;
+            display: block;
+        }
+        h2{
+            font-size: 30px;
+            text-align: center;
+        }
+        h3{
+            margin-top: 20px;
+            text-align: center;
+            font-size: 25px;
+        }
+        input{
+            padding: 10px 20px;
+            width: 100%;
+            font-size: 20px;
+        }
+        .btn-login, .btn-signup {
+            width: 70%;
+            display: block;
+            margin: auto;
+            margin-top: 30px;
+            padding: 10px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+        .btn-login {
+            margin-top: 30px;
+            margin-bottom: 20px;
+        }
+    }
+}

@@ -1,0 +1,18 @@
+.home {
+    display: flex;
+    justify-content: space-between;
+
+    &-sidebar {
+       flex-basis: 25%; 
+       border-right: 1px solid #ccc;
+       height: 100vh;
+       padding: 20px 35px;
+       display: flex;
+       flex-direction: column  ;
+       justify-content: space-between;
+    }
+    &-body {
+        flex-basis: 75%;
+        height: 100vh;
+    }
+}

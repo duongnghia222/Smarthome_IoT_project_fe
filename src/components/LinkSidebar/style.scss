@@ -1,0 +1,36 @@
+.link-single {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-decoration: none;
+    color: #000;
+    // color: #0F88F9;
+    padding: 10px;
+    transition: all 0.3s linear;
+    &-left {
+        display: flex;
+        align-items: center;
+        h3 {
+            font-weight: normal;
+            margin-left: 10px;
+        }
+    }
+    &-right {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      display: flex;  
+      color: #fff;
+      align-items: center;
+      background-color: red;
+      justify-content: center;
+    }
+}
+.link-single.active {
+        color: #19A7CE;
+        border-bottom: 1px solid #19A7CE;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;        h3{
+            font-weight: bold;
+        }
+}

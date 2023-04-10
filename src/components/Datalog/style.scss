@@ -1,0 +1,51 @@
+.datalog {
+    min-height: calc(100vh - 80px);
+    padding: 20px;
+    display: flex;
+    // align-items: center;
+    &-left {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        button{
+        padding: 20px 50px;
+        margin-bottom: 10px;
+        cursor: pointer;
+        // border: 2px solid #000;
+        background-color: #fff;
+        color: #000;
+        font-weight: bold;
+                transition: all 0.3s linear;
+
+        }
+        .active {
+            color: #fff;
+            border-color: transparent;
+        }
+    }
+    &-right {
+        flex-grow: 1;
+        padding: 40px;
+        canvas {
+            height: 80% !important;
+        }
+        .mode-diag {
+            margin-top: 10px;
+            text-align: right;
+            button{
+                margin-left: 20px;
+                min-width: 70px;
+                padding: 5px 0px;
+                cursor: pointer;
+                font-weight: bold;
+                border: 2px solid #000;
+                border-radius: 4px;
+                background-color: #fff;
+            }
+            .active {
+                background-color: #000;
+                color: #fff;
+            }
+        }
+    }
+}

@@ -1,0 +1,30 @@
+.sidebar-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    &-header{
+    display: flex;
+    align-items: center;
+    img {
+        margin-right: 10px;
+        width: 70px;
+        object-fit: cover;
+    }
+    h2 {
+        text-align: center;
+        font-size: 30px;
+    }
+  }
+  &-bottom{
+    padding-top: 50px;
+}
+}
+.sidebar-bottom {
+    padding: 20px;
+    button{
+
+        cursor: pointer;
+        padding: 10px;
+    width: 100%;
+    }
+}
