@@ -7,7 +7,7 @@ export default function HeaderLogin() {
 
         <div className='login-header-left'>
           <img src='./straberry.png'/>
-          <h2>Strawberry Mastery</h2>
+          <h2>SMART HOME</h2>
         </div>
         <div className='login-header-right'>
           <h4>

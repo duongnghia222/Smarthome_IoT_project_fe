@@ -4,7 +4,6 @@ import { useNavigate } from 'react-router-dom'
 import LinkSidebar from '../LinkSidebar'
 import { Link } from 'react-router-dom'
 import { faBell, faDatabase, faHome, faStethoscope, faWrench } from '@fortawesome/free-solid-svg-icons'
-// import {useAuthContext} from "../hooks/useAuthContext"
 import {useAuthContext} from '../../hooks/useAuthContext'
 const links = [
     {
@@ -46,7 +45,7 @@ export default function Sidebar() {
     <div className='sidebar-header'>
     <div className='sidebar-header-header'>
       <img src='./straberry.png'/>
-      <h2>Strawberry Mastery</h2>
+      <h2>SMART HOME</h2>
     </div>
     <div className='sidebar-header-bottom'>
       {
