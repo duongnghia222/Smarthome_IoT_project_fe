@@ -26,7 +26,7 @@ export default function Datalog() {
             data: []
         },
         {
-            name: "Tình trạng cây",
+            name: "Dự báo",
             color: "rgb(63, 221, 102)",
             data: []
         }
@@ -49,19 +49,19 @@ export default function Datalog() {
                 color: "rgb(252, 163, 61)",
                 data: (await getData('light-sensor')).map(e=>parseInt(e))
             },
-            {
-                name: "Tình trạng cây",
-                color: "rgb(63, 221, 102)",
-                data: (await getData('strawberry-status')).map(e=>{
-                  if (e === 'Good'){
-                    return 2
-                  }else if (e === 'Dry'){
-                    return 1
-                  }else{
-                    return 0
-                  }
-                })
-            }
+            // {
+            //     name: "Dự báo",
+            //     color: "rgb(63, 221, 102)",
+            //     data: (await getData('weather-status')).map(e=>{
+            //       if (e === 'Good'){
+            //         return 2
+            //       }else if (e === 'Dry'){
+            //         return 1
+            //       }else{
+            //         return 0
+            //       }
+            //     })
+            // }
           ])
         }
         getAllData()

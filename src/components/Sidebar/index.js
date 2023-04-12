@@ -44,7 +44,7 @@ export default function Sidebar() {
     <>
     <div className='sidebar-header'>
     <div className='sidebar-header-header'>
-      <img src='./straberry.png'/>
+      <img src='./smart-home.png'/>
       <h2>SMART HOME</h2>
     </div>
     <div className='sidebar-header-bottom'>

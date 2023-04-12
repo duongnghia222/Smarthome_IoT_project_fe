@@ -19,22 +19,22 @@ export default class MQTTAdafruitIO{
         this.client.on('message', (topic, message, packet) => {
             console.log("Received '" + message + "' on '" + topic + "'");
             switch (topic){
-                case 'humidity-sensor':
+                case 'bbc-humid':
                     this.setter.setHumidity(parseInt(message.toString()));
                     break;
-                case 'temperature-sensor':
+                case 'bbc-temp':
                     this.setter.setTemperature(parseInt(message.toString()));
                     break;
-                case 'light-sensor':
+                case 'bbc-light':
                     this.setter.setLightIntensity(parseInt(message.toString()));
                     break;
-                case 'fan':
+                case 'bbc-fan':
                     this.setter.setAirBtn(parseInt(message.toString()));
                     break;
-                case 'pumper':
+                case 'bbc-pump':
                     this.setter.setPumperBtn(parseInt(message.toString()));
                     break;
-                case 'led':
+                case 'bbc-led':
                     this.setter.setLightBtn(parseInt(message.toString()));
                     break;
             }

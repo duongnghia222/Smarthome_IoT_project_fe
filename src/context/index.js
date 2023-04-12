@@ -2,11 +2,9 @@ import {useContext, createContext, useState,useEffect} from "react";
 import axios from 'axios';
 import { username, key } from "../utils/env";
 
-const username = username;
-const key = key;
 
 async function getLastValue (feed_id){
-    const url = `https://io.adafruit.com/api/v2/${username}/feeds/${feed_id}/data/last`;
+    const url = `https://io.adafruit.com/api/v2/${username}/feeds/${feed_id}/data/?limit=1`;
     const options = {
         headers: {
           'X-AIO-Key': key
@@ -30,13 +28,13 @@ const AppProvider = (props)=>{
 
     useEffect(()=>{
        const defaultValue = async () => {
-        setTemperature(await getLastValue('temperature-sensor'))
-        setLightIntensity(await getLastValue('light-sensor'))
-        setHumidity(await getLastValue('humidity-sensor'))
-        setLightBtn(await getLastValue('led'))
-        setPumperBtn(await getLastValue('pumper'))
-        setAirBtn(await getLastValue('fan'))
-        setStrawStatus(await getLastValue('strawberry-status'))
+        setTemperature(await getLastValue('bbc-temp'))
+        setLightIntensity(await getLastValue('bbc-light'))
+        setHumidity(await getLastValue('bbc-humid'))
+        setLightBtn(await getLastValue('bbc-led'))
+        setPumperBtn(await getLastValue('bbc-pump'))
+        setAirBtn(await getLastValue('bbc-fan'))
+        // setStrawStatus(await getLastValue('weather-status'))
        }
        defaultValue()
     },[])

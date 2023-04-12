@@ -12,7 +12,7 @@ export default function Header() {
 
         >
           <h2>Chào mừng trở lại, {username}</h2>
-          <p>Đây là hệ thống chăm sóc dâu tây môn Đồ án đa ngành</p>
+          <p>Dashboard</p>
         </div>
         <div className='header-home-right'>
           <div>
@@ -22,7 +22,7 @@ export default function Header() {
           <FontAwesomeIcon icon={faBell}/>
           </div>
           <div className='name-user'>
-            <img  src="./bedautay.png" alt='bedautay' className='avar-user'/>
+            <img  src="./man.png" alt='user' className='avar-user'/>
             <h2>{username}</h2>
             <FontAwesomeIcon icon={faCaretDown}/>
           </div>

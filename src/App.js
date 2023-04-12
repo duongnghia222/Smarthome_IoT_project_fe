@@ -19,25 +19,25 @@ const App = () => {
     client.on('message', (topic, message, packet) => {
         console.log("Received '" + message + "' on '" + topic + "'");
         switch (topic.split("/")[2]) {
-            case 'humidity-sensor':
+            case 'bbc-humid':
                 setHumidity((message.toString()));
                 break;
-            case 'temperature-sensor':
+            case 'bbc-temp':
                 setTemperature((message.toString()));
                 break;
-            case 'light-sensor':
+            case 'bbc-light':
                 setLightIntensity((message.toString()));
                 break;
-            case 'fan':
+            case 'bbc-fan':
                 setAirBtn((message.toString()));
                 break;
-            case 'strawberry-status':
-                setStrawStatus((message.toString()));
-                break;
-            case 'pumper':
+            // case 'weather-status':
+            //     setStrawStatus((message.toString()));
+            //     break;
+            case 'bbc-pump':
                 setPumperBtn((message.toString()));
                 break;
-            case 'led':
+            case 'bbc-led':
                 setLightBtn((message.toString()));
                 break;
             default:
@@ -45,7 +45,7 @@ const App = () => {
         }
     });
     return (<BrowserRouter>
-        {user ?
+        {true ?
             <Routes>
                 <Route element={<WebsiteLayout />}>
                     <Route path="" element={<Dashboard />} />
@@ -55,13 +55,15 @@ const App = () => {
                     <Route path="notification" element={<Dashboard />} />
                     <Route path="*" element={<Navigate replace to="/" />} />
                 </Route>
+                
             </Routes> :
             <LoginLayout>
                 <Routes>
+                    <Route path="/" element={<Navigate replace to="login" />} />
                     <Route path='/login' element={<Login />} />
                     <Route path="/signup" element={<Signup />} />
-                    <Route path="*" element={<Navigate replace to="login" />} />
                 </Routes>
+
             </LoginLayout>
         }
     </BrowserRouter >)

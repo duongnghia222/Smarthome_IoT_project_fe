@@ -6,7 +6,7 @@ export default function HeaderLogin() {
       <div className='login-header-wrap'>
 
         <div className='login-header-left'>
-          <img src='./straberry.png'/>
+          <img src='./smart-home.png'/>
           <h2>SMART HOME</h2>
         </div>
         <div className='login-header-right'>

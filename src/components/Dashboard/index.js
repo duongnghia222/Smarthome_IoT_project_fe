@@ -1,8 +1,8 @@
 import React from 'react'
 import DataFarm from './DataFarm'
 import OverallChart from './OverallChart'
-import { faLightbulb, faTemperatureLow,faTemperatureHigh,faNotesMedical} from '@fortawesome/free-solid-svg-icons'
-import { faDroplet, faSeedling } from '@fortawesome/free-solid-svg-icons'
+import { faLightbulb, faTemperatureLow,faTemperatureHigh,faNotesMedical, faCloud} from '@fortawesome/free-solid-svg-icons'
+import { faDroplet, faSeedling  } from '@fortawesome/free-solid-svg-icons'
 import "./style.scss"
 import DiagData from '../DiagData/DiagData'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -31,7 +31,7 @@ export default function Dashboard() {
         data: []
     },
     {
-        name: "Tình trạng cây",
+        name: "Dự báo",
         color: "rgb(63, 221, 102)",
         data: []
     }
@@ -42,31 +42,31 @@ export default function Dashboard() {
         {
             name: "Nhiệt độ",
             color: "rgb(15, 136, 249)",
-            data: (await getData('temperature-sensor')).map(e=>parseInt(e))
+            data: (await getData('bbc-temp')).map(e=>parseInt(e))
         },
         {
             name: "Độ ẩm",
             color: "rgb(16, 213, 248)",
-            data: (await getData('humidity-sensor')).map(e=>parseInt(e))
+            data: (await getData('bbc-humid')).map(e=>parseInt(e))
         },
         {
             name: "Ánh sáng",
             color: "rgb(252, 163, 61)",
-            data: (await getData('light-sensor')).map(e=>parseInt(e))
+            data: (await getData('bbc-light')).map(e=>parseInt(e))
         },
-        {
-            name: "Tình trạng cây",
-            color: "rgb(63, 221, 102)",
-            data: (await getData('strawberry-status')).map(e=>{
-              if (e === 'Good'){
-                return 2
-              }else if (e === 'Dry'){
-                return 1
-              }else{
-                return 0
-              }
-            })
-        }
+        // {
+        //     name: "Tình trạng cây",
+        //     color: "rgb(63, 221, 102)",
+        //     data: (await getData('weather-status')).map(e=>{
+        //       if (e === 'Good'){
+        //         return 2
+        //       }else if (e === 'Dry'){
+        //         return 1
+        //       }else{
+        //         return 0
+        //       }
+        //     })
+        // }
       ])
     }
     getAllData()
@@ -107,7 +107,7 @@ export default function Dashboard() {
         </div>;
       case '3':
         return <div>
-          <h2>Tình trạng</h2>
+          <h2>Dự báo</h2>
           <p>Good</p>
         </div>;
       default:
@@ -143,7 +143,7 @@ export default function Dashboard() {
             <option value={0} key={0}>Nhiệt độ</option>
             <option value={1} key={1}>Độ ẩm</option>
             <option value={2} key={2}>Ánh sáng</option>
-            <option value={3} key={3}>Tình trạng</option>
+            <option value={3} key={3}>Dự báo</option>
           </select>
           </div>
           
@@ -168,7 +168,7 @@ export default function Dashboard() {
         <div className='dashboard-bottom-row'>
 
           <DataFarm data={{curVal: lightIntensity, prevVal: 5 ,isCondition: false, color: "#FCA33D",name: "Ánh sáng",  icon: faLightbulb, postfix: "Lux "}} />
-          <DataFarm data={{isCondition: true, color: "#3FDD66",name: "Tình trạng cây",  icon: faSeedling, curVal: strawStatus}}/>
+          <DataFarm data={{isCondition: true, color: "#3FDD66",name: "Dự báo",  icon: faCloud, curVal: strawStatus}}/>
       </div>
         </div>
     </div>

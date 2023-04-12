@@ -13,7 +13,7 @@ export default function BodyLogin() {
                 <img src='./farm.jpg' />
             </div>
             <div className='body-login-right'>
-                <h2>Welcome To Strawberry farm</h2>
+                <h2>Welcome To Smart Home</h2>
                 <h3>Login</h3>
                 <input placeholder='Username' type="text" />
                 <input placeholder='Password' type="password" />

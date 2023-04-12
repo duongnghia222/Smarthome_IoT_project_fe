@@ -5,8 +5,7 @@ const brokerUrl = `mqtts://${username}:${key}@io.adafruit.com`
 const options = {
     port: 443
 }
-console.log(brokerUrl)
-console.log(key)
+
 const client = mqtt.connect(brokerUrl,options);
 client.on('connect', () => {
     console.log("Connected to Adafruit!")
@@ -26,7 +25,7 @@ function subscribe(feed_id){
 }
 subscribe('humidity-sensor')
 subscribe('light-sensor')
-subscribe('strawberry-status')
+// subscribe('weather-status')
 subscribe('temperature-sensor')
 subscribe('fan')
 subscribe('pumper')

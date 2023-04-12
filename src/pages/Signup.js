@@ -29,7 +29,7 @@ const Signup = () => {
                 <img src='./farm.jpg' />
             </div>
             <div className='body-login-right'>
-                <h2>Welcome To Strawberry farm</h2>
+                <h2>Welcome To Smart Home</h2>
 
                 <form className="signup" onSubmit={handleSubmit}>
                     <h3>Sign Up</h3>
