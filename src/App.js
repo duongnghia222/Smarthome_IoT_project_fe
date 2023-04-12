@@ -9,6 +9,7 @@ import Login from "./pages/Login";
 import Signup from './pages/Signup'
 import Dashboard from "./components/Dashboard";
 import Control from "./pages/Control";
+import Notification from "./pages/Notification";
 import Datalog from "./components/Datalog/Datalog";
 import { useGlobalContext } from './context/index';
 import client from './utils/adafruit';
@@ -31,7 +32,7 @@ const App = () => {
             case 'bbc-fan':
                 setAirBtn((message.toString()));
                 break;
-            // case 'weather-status':
+            // case 'w-status':
             //     setStrawStatus((message.toString()));
             //     break;
             case 'bbc-pump':
@@ -52,7 +53,7 @@ const App = () => {
                     <Route path="control" element={<Control />} />
                     <Route path="datalog" element={<Datalog />} />
                     <Route path="diagnose" element={<Dashboard />} />
-                    <Route path="notification" element={<Dashboard />} />
+                    <Route path="notification" element={<Notification />} />
                     <Route path="*" element={<Navigate replace to="/" />} />
                 </Route>
                 

@@ -72,7 +72,7 @@ export default function Datalog() {
             <button style={{ background: mode === 0 && data[mode].color}} onClick={()=>setMode(0)} className={mode === 0 ? "active" : ""}>Nhiệt độ</button>
             <button style={{ background: mode === 1 && data[mode].color}} onClick={()=>setMode(1)} className={mode === 1 ? "active" : ""}>Độ ẩm</button>
             <button  style={{ background: mode === 2 && data[mode].color}} onClick={()=>setMode(2)} className={mode === 2 ? "active" : ""}>Ánh sáng</button>
-            <button  style={{ background: mode === 3 && data[mode].color}} onClick={()=>setMode(3)} className={mode === 3 ? "active" : ""}>Tính trạng cây</button>
+            {/* <button  style={{ background: mode === 3 && data[mode].color}} onClick={()=>setMode(3)} className={mode === 3 ? "active" : ""}>Tính trạng cây</button> */}
         </div>
         <div className='datalog-right'>
             <DiagData data1= {data[mode]} labels={labels}/>

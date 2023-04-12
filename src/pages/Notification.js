@@ -3,25 +3,23 @@ import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { Box, Grid } from '@mui/material'
 
-import ScheduledControl from '../components/Control/ScheduledControl'
-import ManualControl from '../components/Control/ManualControl'
 import ControlDiary from '../components/Control/ControlDiary'
 
 
-const Control = () => {
+const Notification = () => {
     return (
-        <LocalizationProvider dateAdapter={AdapterDayjs}><Box sx={{ px: 3 }}>
+        <LocalizationProvider dateAdapter={AdapterDayjs}><Box sx={{ px: 3, paddingTop:5 }}>
             <Grid container spacing={2}>
                 <Grid item xs={12}>
-                    <ScheduledControl />
+                    <ControlDiary />
                 </Grid>
-                <Grid item xs={12} md={5}>
+                {/* <Grid item xs={12} md={5}>
                     <ManualControl />
-                </Grid>
+                </Grid> */}
                 {/* <Grid item xs={12} md={7}>
                     <ControlDiary />
                 </Grid> */}
             </Grid ></Box> </LocalizationProvider>)
 }
 
-export default Control
+export default Notification
