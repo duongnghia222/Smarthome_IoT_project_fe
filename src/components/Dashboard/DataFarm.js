@@ -7,6 +7,7 @@ export default function DataFarm({ data }) {
             <div className='dashboard-bottom-row-container-header'>
                 <h2>{data.name}
                 </h2>
+                {/* {console.log(data)} */}
                 {!data.isCondition && (
                     data.curVal > data.prevVal ? (
                         <div className='dashboard-bottom-row-container-header-right'><FontAwesomeIcon icon={faTurnUp} />

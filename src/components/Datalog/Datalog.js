@@ -37,17 +37,17 @@ export default function Datalog() {
             {
                 name: "Nhiệt độ",
                 color: "rgb(15, 136, 249)",
-                data: (await getData('temperature-sensor')).map(e=>parseInt(e))
+                data: (await getData('bbc-temp')).map(e=>parseInt(e))
             },
             {
                 name: "Độ ẩm",
                 color: "rgb(16, 213, 248)",
-                data: (await getData('humidity-sensor')).map(e=>parseInt(e))
+                data: (await getData('bbc-humid')).map(e=>parseInt(e))
             },
             {
                 name: "Ánh sáng",
                 color: "rgb(252, 163, 61)",
-                data: (await getData('light-sensor')).map(e=>parseInt(e))
+                data: (await getData('bbc-light')).map(e=>parseInt(e))
             },
             // {
             //     name: "Dự báo",

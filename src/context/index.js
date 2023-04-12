@@ -11,7 +11,7 @@ async function getLastValue (feed_id){
         }
       };
     let res = await axios.get(url, options);
-    return res.data.value;
+    return res.data[0].value;
 }
 
 const AppContext = createContext();
@@ -28,13 +28,15 @@ const AppProvider = (props)=>{
 
     useEffect(()=>{
        const defaultValue = async () => {
-        setTemperature(await getLastValue('bbc-temp'))
-        setLightIntensity(await getLastValue('bbc-light'))
-        setHumidity(await getLastValue('bbc-humid'))
-        setLightBtn(await getLastValue('bbc-led'))
-        setPumperBtn(await getLastValue('bbc-pump'))
-        setAirBtn(await getLastValue('bbc-fan'))
-        // setStrawStatus(await getLastValue('weather-status'))
+        const latestTemperature = await getLastValue('bbc-temp');
+        setTemperature(latestTemperature);
+        console.log(latestTemperature);
+        setLightIntensity(await getLastValue('bbc-light'));
+        setHumidity(await getLastValue('bbc-humid'));
+        setLightBtn(await getLastValue('bbc-led'));
+        setPumperBtn(await getLastValue('bbc-pump'));
+        setAirBtn(await getLastValue('bbc-fan'));
+        // setStrawStatus(await getLastValue('weather-status'));
        }
        defaultValue()
     },[])

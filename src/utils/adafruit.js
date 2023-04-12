@@ -23,13 +23,13 @@ function subscribe(feed_id){
         console.log("Subscribed to " + feed_id)
     })
 }
-subscribe('humidity-sensor')
-subscribe('light-sensor')
+subscribe('bbc-humid')
+subscribe('bbc-light')
 // subscribe('weather-status')
-subscribe('temperature-sensor')
-subscribe('fan')
-subscribe('pumper')
-subscribe('led')
+subscribe('bbc-temp')
+subscribe('bbc-fan')
+subscribe('bbc-pump')
+subscribe('bbc-led')
 
 export default client;
 export function publish(feed_id,data){

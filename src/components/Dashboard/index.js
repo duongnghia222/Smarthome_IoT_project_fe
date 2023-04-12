@@ -2,7 +2,7 @@ import React from 'react'
 import DataFarm from './DataFarm'
 import OverallChart from './OverallChart'
 import { faLightbulb, faTemperatureLow,faTemperatureHigh,faNotesMedical, faCloud} from '@fortawesome/free-solid-svg-icons'
-import { faDroplet, faSeedling  } from '@fortawesome/free-solid-svg-icons'
+import { faDroplet } from '@fortawesome/free-solid-svg-icons'
 import "./style.scss"
 import DiagData from '../DiagData/DiagData'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -167,7 +167,7 @@ export default function Dashboard() {
         </div>
         <div className='dashboard-bottom-row'>
 
-          <DataFarm data={{curVal: lightIntensity, prevVal: 5 ,isCondition: false, color: "#FCA33D",name: "Ánh sáng",  icon: faLightbulb, postfix: "Lux "}} />
+          <DataFarm data={{curVal: Math.round(lightIntensity/10), prevVal: 5 ,isCondition: false, color: "#FCA33D",name: "Ánh sáng",  icon: faLightbulb, postfix: "Lux "}} />
           <DataFarm data={{isCondition: true, color: "#3FDD66",name: "Dự báo",  icon: faCloud, curVal: strawStatus}}/>
       </div>
         </div>
