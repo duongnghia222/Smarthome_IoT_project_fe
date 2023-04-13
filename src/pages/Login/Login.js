@@ -106,7 +106,7 @@ function Login() {
               className="w-full mb-2.5 flex align-center justify-center leading-normal"
               appearance="primary"
               onClick={() => {
-                navigate(`/sign/register`);
+                navigate(`/signup`);
               }}
               block
               size="md"
