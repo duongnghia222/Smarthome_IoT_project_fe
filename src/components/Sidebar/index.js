@@ -24,7 +24,7 @@ const links = [
         icon: faDatabase
     }, {
         name: "AI Tab",
-        to: "/chandoan",
+        to: "/ai",
         isNofity: false,
         icon: faCamera
     }, {

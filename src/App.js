@@ -4,6 +4,7 @@ import WebsiteLayout from "./layouts/WebsiteLayout";
 import Login from "./pages/Login/Login";
 import Signup from './pages/SignUp/Signup'
 import Dashboard from "./components/Dashboard";
+import AI from "./pages/AI/AI";
 import Control from "./pages/ControlDevice/Control";
 import Notification from "./pages/Notification/Notification";
 import Datalog from "./components/Datalog/Datalog";
@@ -42,13 +43,13 @@ const App = () => {
         }
     });
     return (<BrowserRouter>
-        {user ?
+        {true ?
             <Routes>
                 <Route element={<WebsiteLayout />}>
                     <Route path="" element={<Dashboard />} />
                     <Route path="control" element={<Control />} />
                     <Route path="datalog" element={<Datalog />} />
-                    <Route path="diagnose" element={<Dashboard />} />
+                    <Route path="ai" element={<AI />} />
                     <Route path="notification" element={<Notification />} />
                     <Route path="*" element={<Navigate replace to="/" />} />
                 </Route>
