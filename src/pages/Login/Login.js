@@ -11,7 +11,7 @@ const Login = () => {
     return (
         <div className='body-login'>
             <div className='body-login-left'>
-                <img src='./farm.jpg' />
+                <img src='./smart-home.png' />
             </div>
             <div className='body-login-right'>
                 <h2>Welcome To Smart Home</h2>
@@ -30,11 +30,11 @@ const Login = () => {
        }}
      >
        <Form>
-         <label htmlFor="email">Eamil Addesss</label>
+         <label htmlFor="email">Email Addesss</label>
          <Field name="email" type="text" />
          <ErrorMessage name="email">{msg=><div className="errorMessage">{msg}</div>}</ErrorMessage>
  
-         <label htmlFor="password">Passwrod</label>
+         <label htmlFor="password">Password</label>
          <Field name="password" type="password"/>
          <ErrorMessage name="password" className="errorMessage">{msg=><div className="errorMessage">{msg}</div>}</ErrorMessage>
  

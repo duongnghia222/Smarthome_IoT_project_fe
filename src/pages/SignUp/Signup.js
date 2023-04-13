@@ -26,7 +26,7 @@ const Signup = () => {
     return (
         <div className='body-login'>
             <div className='body-login-left'>
-                <img src='./farm.jpg' />
+                <img src='./smart-home.png' width="100" />
             </div>
             <div className='body-login-right'>
                 <h2>Welcome To Smart Home</h2>
