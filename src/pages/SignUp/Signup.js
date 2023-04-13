@@ -5,12 +5,11 @@ import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 // import { setIdUser } from "@/store/userSlice";
 // import { Toast } from '@/instance/toast.js';
-import LoginIcon from '@mui/icons-material/Login';
-import ReplayIcon from '@mui/icons-material/Replay';
+
 // import { assignToken } from '@/utils';
 
 // import api from "@/api/index.js";
-// import { IconUndo, IconSign } from "@/icons";
+import { IconUndo, IconSign } from "../../assets/icon";
 
 const pathSignupAccount = "api/user/Signup";
 
@@ -101,7 +100,7 @@ function Signup() {
                 onClick={resgisterAccount}
               >
                 Đăng ký
-                <LoginIcon className="ml-2" />
+                <IconSign className="ml-2" />
               </Button>
             </Form.Group>
             <Form.Group>
@@ -115,7 +114,7 @@ function Signup() {
                 size="md"
                 color="blue"
               >
-                <ReplayIcon />
+                <IconUndo />
                 Trở lại đăng nhập
               </Button>
             </Form.Group>
