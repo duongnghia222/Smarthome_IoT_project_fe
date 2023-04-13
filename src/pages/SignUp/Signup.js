@@ -1,8 +1,8 @@
 import { useState } from "react"
-import { useSignup } from "../hooks/useSignup"
+import { useSignup } from "../../hooks/useSignup"
 import FileBase from 'react-file-base64';
 import { useNavigate } from "react-router";
-import "./Login.scss"
+import "../Login/Login"
 
 const Signup = () => {
     const navigate = useNavigate();

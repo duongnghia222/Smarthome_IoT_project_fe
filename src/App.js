@@ -5,11 +5,11 @@ import { useAuthContext } from './hooks/useAuthContext'
 import WebsiteLayout from "./layouts/WebsiteLayout";
 import LoginLayout from "./layouts/LoginLayout";
 
-import Login from "./pages/Login";
-import Signup from './pages/Signup'
+import Login from "./pages/Login/Login";
+import Signup from './pages/SignUp/Signup'
 import Dashboard from "./components/Dashboard";
-import Control from "./pages/Control";
-import Notification from "./pages/Notification";
+import Control from "./pages/ControlDevice/Control";
+import Notification from "./pages/Notification/Notification";
 import Datalog from "./components/Datalog/Datalog";
 import { useGlobalContext } from './context/index';
 import client from './utils/adafruit';
