@@ -2,7 +2,7 @@ import { faBell, faCaretDown, faGear } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React, { useState, useEffect } from 'react'
 import "./style.scss"
-import { username } from '../../utils/env'
+const username = process.env.REACT_APP_NAME
 
 function TimeOfDay() {
   const [timeOfDay, setTimeOfDay] = useState("");

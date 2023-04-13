@@ -1,6 +1,7 @@
 import {useContext, createContext, useState,useEffect} from "react";
 import axios from 'axios';
-import { username, key } from "../utils/env";
+const key = process.env.REACT_APP_KEY
+const username = process.env.REACT_APP_NAME
 
 
 async function getLastValue (feed_id){

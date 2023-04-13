@@ -1,5 +1,7 @@
 import mqtt from "precompiled-mqtt";
-import { username,key } from "./env";
+const key = process.env.REACT_APP_KEY
+const username = process.env.REACT_APP_NAME
+console.log(username)
 
 const brokerUrl = `mqtts://${username}:${key}@io.adafruit.com`
 const options = {

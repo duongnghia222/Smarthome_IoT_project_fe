@@ -1,8 +1,7 @@
 import React from 'react'
-import { username } from '../../../utils/env';
 import { Table, Stack, Typography, TextField, TableContainer, TableRow, TableBody, TableCell, Paper} from '@mui/material';
-
 import DiaryRow from './DiaryRow';
+const username = process.env.REACT_APP_NAME
 
 const diaries = [
     { date: '1/3/2023', name: username, state: "Online", activity: "Chuyển hệ thống sang tự động" },
