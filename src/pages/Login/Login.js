@@ -2,11 +2,13 @@ import { Form, ButtonToolbar, Button, Panel, Divider } from "rsuite";
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
-import GitHubIcon from '@mui/icons-material/GitHub';
-import GoogleIcon from '@mui/icons-material/Google';
-import FacebookIcon from '@mui/icons-material/Facebook';
-import LoginIcon from '@mui/icons-material/Login';
-import CheckIcon from '@mui/icons-material/Check';
+import {
+  IconGithub,
+  IconGoogle,
+  IconFacebook,
+  IconSign,
+  IconCheck,
+} from "../../assets/icon";
 
 
 // import { setIdUser } from "@/store/userSlice";
@@ -90,7 +92,7 @@ function Login() {
                   appearance="primary"
                 >
                   Đăng nhập
-                  <LoginIcon className="ml-2" />
+                  <IconSign className="ml-2" />
                 </Button>
                 <Button className="absolute right-0 bottom-0" appearance="link">
                   Liệu bạn có, quên mật khẩu?
@@ -112,25 +114,25 @@ function Login() {
               size="md"
             >
               Tiến hành đăng ký
-              <CheckIcon />
+              <IconCheck />
             </Button>
             <Divider>
               đăng nhập với
             </Divider>
             <div className="w-min flex m-auto">
               <div className="wrap w-8 h-8 relative cursor-pointer	">
-                <div className="inset-0 bg-black absolute rounded-full"></div>
-                <GitHubIcon
+              <div className="inset-0 bg-black absolute rounded-full"></div>
+                <IconGithub
                   className="fill-white absolute left-0 top-0"
                   width={32}
                   height={32}
                 />
               </div>
               <div className="ml-2.5 wrap w-8 h-8 cursor-pointer	">
-                <GoogleIcon className="fill-white" width={32} height={32} />
+                <IconGoogle className="fill-white" width={32} height={32} />
               </div>
               <div className="ml-2.5 wrap w-8 h-8 cursor-pointer	">
-                <FacebookIcon className="fill-white" width={32} height={32} />
+                <IconFacebook className="fill-white" width={32} height={32} />
               </div>
             </div>
           </Form.Group>

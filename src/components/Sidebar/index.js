@@ -3,7 +3,7 @@ import "./style.scss"
 import { useNavigate } from 'react-router-dom'
 import LinkSidebar from '../LinkSidebar'
 import { Link } from 'react-router-dom'
-import { faBell, faDatabase, faHome, faStethoscope, faWrench } from '@fortawesome/free-solid-svg-icons'
+import { faBell, faDatabase, faHome, faGamepad, faCamera } from '@fortawesome/free-solid-svg-icons'
 import {useAuthContext} from '../../hooks/useAuthContext'
 const links = [
     {
@@ -16,17 +16,17 @@ const links = [
         name: "Điều khiển",
         to: "/control",
         isNofity: false,
-        icon: faWrench
+        icon: faGamepad
     }, {
         name: "Dữ liệu",
         isNofity: false,
         to: "/datalog",
         icon: faDatabase
     }, {
-        name: "Chẩn đoán",
+        name: "AI Tab",
         to: "/chandoan",
-        isNofity: true,
-        icon: faStethoscope
+        isNofity: false,
+        icon: faCamera
     }, {
         name: "Thông báo",
         to: "/notification",
