@@ -2,6 +2,7 @@ import { Form, ButtonToolbar, Button, Panel, Divider } from "rsuite";
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
+import "./Login.scss"
 import {
   IconGithub,
   IconGoogle,

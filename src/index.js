@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
-import "./sassStyles/global.scss"
 import { AuthContextProvider } from './context/AuthContext';
 import AppProvider from './context/index';
 import "./sassStyles/global.scss"
+import "./sassStyles/theme_variable.scss"
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
