@@ -70,7 +70,6 @@ const data = {
     {
       label: 'Ánh sáng',
       data: labels.map(() => Math.floor(Math.random()*100)),
-      // data: []
       backgroundColor: '#FCA33D',
       stack: 'Stack 0',
     },
