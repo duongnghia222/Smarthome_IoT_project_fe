@@ -57,27 +57,29 @@ const App = () => {
   return (
     <ColorModeContext.Provider value={colorMode}>
       <ThemeProvider theme={theme}>
-      <CssBaseline />
-        <BrowserRouter>
-          {true ? (
-            <Routes>
-              <Route element={<WebsiteLayout />}>
-                <Route path="" element={<Dashboard />} />
-                <Route path="control" element={<Control />} />
-                <Route path="datalog" element={<Datalog />} />
-                <Route path="ai" element={<AI />} />
-                <Route path="notification" element={<Notification />} />
-                <Route path="*" element={<Navigate replace to="/" />} />
-              </Route>
-            </Routes>
-          ) : (
-            <Routes>
-              <Route path="/" element={<Navigate replace to="login" />} />
-              <Route path="/login" element={<Login />} />
-              <Route path="/signup" element={<Signup />} />
-            </Routes>
-          )}
-        </BrowserRouter>
+        <CssBaseline />
+        <div id={theme.palette.mode}>
+          <BrowserRouter>
+            {true ? (
+              <Routes>
+                <Route element={<WebsiteLayout />}>
+                  <Route path="" element={<Dashboard />} />
+                  <Route path="control" element={<Control />} />
+                  <Route path="datalog" element={<Datalog />} />
+                  <Route path="ai" element={<AI />} />
+                  <Route path="notification" element={<Notification />} />
+                  <Route path="*" element={<Navigate replace to="/" />} />
+                </Route>
+              </Routes>
+            ) : (
+              <Routes>
+                <Route path="/" element={<Navigate replace to="login" />} />
+                <Route path="/login" element={<Login />} />
+                <Route path="/signup" element={<Signup />} />
+              </Routes>
+            )}
+          </BrowserRouter>
+        </div>
       </ThemeProvider>
     </ColorModeContext.Provider>
   );

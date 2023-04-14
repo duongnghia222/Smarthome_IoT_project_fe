@@ -181,7 +181,7 @@ export default function Dashboard() {
               </div>
             </div>
             <div className="dashboard-header-right-top-right">
-              <select onChange={handleChange}>
+              <select className="dashboard-header-right-top-right-boxtext" onChange={handleChange}>
                 <option value={0} key={0}>
                   Nhiệt độ
                 </option>

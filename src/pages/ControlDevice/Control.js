@@ -18,9 +18,6 @@ const Control = () => {
                 <Grid item xs={12} md={5}>
                     <ManualControl />
                 </Grid>
-                {/* <Grid item xs={12} md={7}>
-                    <ControlDiary />
-                </Grid> */}
             </Grid ></Box> </LocalizationProvider>)
 }
 

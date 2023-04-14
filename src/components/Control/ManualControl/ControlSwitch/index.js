@@ -41,7 +41,7 @@ const ControlSwitch = (props) => {
 
     }
     return (
-        <Paper elevation={3} sx={{borderRadius: "2rem", bgcolor: checked ? deepPurple[900] : null }}>
+        <Paper elevation={3} sx={{borderRadius: "2rem", bgcolor: checked ? lightBlue[900] : null }}>
             <Grid container sx={{width:'140px', height:"140px", padding: 2 }}>
                 <Grid item xs={12} sx={{}}>
                     <Stack direction="row" justifyContent="space-between" alignItems="center">

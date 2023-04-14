@@ -48,7 +48,7 @@ export default function DiagData({data1, labels}) {
           },
           title: {
             display: true,
-            text: `Biều đồ ${data1.name}`,
+            text: `Biểu đồ ${data1.name}`,
             font: {
               size: 20,
               

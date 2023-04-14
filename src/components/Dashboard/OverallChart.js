@@ -24,7 +24,7 @@ const options = {
   plugins: {
     title: {
       display: true,
-      text: "Biều đồ tổng quát",
+      text: "Biểu đồ tổng quát",
       font: {
         size: 15
       }

@@ -22,7 +22,7 @@ const ManualControl = () => {
     return (
         <FormGroup>
             <FormLabel component="legend" sx={{py:0}}>
-                <Typography color='black' variant="h5" sx={{ textTransform: "uppercase", pb: 2 }}>Điều khiển thủ công</Typography>
+                <Typography color='grey' variant="h5" sx={{ textTransform: "uppercase", pb: 2 }}>Điều khiển thủ công</Typography>
             </FormLabel>
             <Stack direction="row" spacing={2}>
                 {devices.map((device,idx) => <ControlSwitch key={idx} type={idx} device={device}/>)}

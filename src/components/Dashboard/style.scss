@@ -1,5 +1,55 @@
+#dark .dashboard{
+    background-color: #101522;
+}
+#dark .dashboard-header-right{
+    background-color: #080d18;
+}
+#dark select{
+    background-color: #101522;
+    color: white;
+}
+
+#dark button{
+    background-color: #101522;
+    color: white;
+    border-color: white;
+}
+
+#dark .dashboard-bottom-row-container{
+    background-color: #080d18;
+    color: white;
+    border-color: white;
+}
+
+#dark .MuiPaper-root{
+    background-color: #080d18;
+    color: white;
+    border-color: white;
+}
+#dark p{
+    color: white !important;
+}
+
+
+
+#dark h5{
+    color: white !important;
+}
+
+#dark h2{
+    color: white !important;
+    opacity: 1;
+}
+
+#dark svg{
+    color: white !important;
+}
+
+#light h5{
+    color: black !important;
+}
+
 .dashboard {
-    height: calc(100vh - 80px);
     padding: 10px 40px;
     background-color: #F3F7F8;
     &-header {

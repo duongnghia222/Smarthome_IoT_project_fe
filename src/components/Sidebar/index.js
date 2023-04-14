@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
 import "./style.scss"
 import { useNavigate } from 'react-router-dom'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import LinkSidebar from '../LinkSidebar'
 import { Link } from 'react-router-dom'
-import { faBell, faDatabase, faHome, faGamepad, faCamera } from '@fortawesome/free-solid-svg-icons'
+import { faBell, faDatabase, faHome, faGamepad, faCamera, faHomeLg } from '@fortawesome/free-solid-svg-icons'
 import {useAuthContext} from '../../hooks/useAuthContext'
 const links = [
     {
@@ -44,7 +45,7 @@ export default function Sidebar() {
     <>
     <div className='sidebar-header'>
     <div className='sidebar-header-header'>
-      <img src='./smart-home.png'/>
+      {/* <FontAwesomeIcon icon={faHomeLg} /> */}
       <h2>SMART HOME</h2>
     </div>
     <div className='sidebar-header-bottom'>
