@@ -31,6 +31,16 @@ export default function DiagData({data1, labels}) {
         }]
       };
       const options = {
+        scales:{
+          yAxes: [
+            {
+              ticks: {
+                beginAtZero: true,
+                stepSize: 0.2
+              }
+            }
+          ]
+        },
         responsive: true,
         plugins: {
           legend: {

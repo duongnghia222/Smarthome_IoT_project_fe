@@ -1,6 +1,5 @@
 import React from 'react'
 import DiagData from '../DiagData/DiagData';
-import { DiaDatalog } from './DiaDatalog';
 import "./style.scss"
 import getData from '../../utils/getData';
 import { useGlobalContext } from '../../context/index';

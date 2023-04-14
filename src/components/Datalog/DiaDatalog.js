@@ -1,7 +1,7 @@
-import React from 'react'
+// import React from 'react'
 
-export const DiaDatalog = () => {
-  return (
-    <div>DiaDatalog</div>
-  )
-}
+// export const DiaDatalog = () => {
+//   return (
+//     <div>DiaDatalog</div>
+//   )
+// }
