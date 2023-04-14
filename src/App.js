@@ -1,7 +1,8 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { useAuthContext } from "./hooks/useAuthContext";
-import { ThemeContext } from "./context/ThemeContext";
+import { ColorModeContext, useMode } from "./theme";
 import { useState } from "react";
+import { CssBaseline, ThemeProvider } from "@mui/material";
 import WebsiteLayout from "./layouts/WebsiteLayout";
 import Login from "./pages/Login/Login";
 import Signup from "./pages/SignUp/Signup";
@@ -14,10 +15,7 @@ import { useGlobalContext } from "./context/index";
 import client from "./utils/adafruit";
 
 const App = () => {
-  const [theme, setTheme] = useState("dark");
-  const toggleTheme = () => {
-    setTheme((curr) => (curr === "light" ? "dark" : "light"));
-  }
+  const [theme, colorMode] = useMode();
   const { user } = useAuthContext();
   const {
     setTemperature,
@@ -57,31 +55,31 @@ const App = () => {
     }
   });
   return (
-    <ThemeContext.Provider value={{ theme, toggleTheme }}>
-      <div id={theme}>
+    <ColorModeContext.Provider value={colorMode}>
+      <ThemeProvider theme={theme}>
+      <CssBaseline />
         <BrowserRouter>
-        {true ?
+          {true ? (
             <Routes>
-                <Route element={<WebsiteLayout />}>
-                    <Route path="" element={<Dashboard />} />
-                    <Route path="control" element={<Control />} />
-                    <Route path="datalog" element={<Datalog />} />
-                    <Route path="ai" element={<AI />} />
-                    <Route path="notification" element={<Notification />} />
-                    <Route path="*" element={<Navigate replace to="/" />} />
-                </Route>
-                
-            </Routes> :
-                <Routes>
-                    <Route path="/" element={<Navigate replace to="login" />} />
-                    <Route path='/login' element={<Login />} />
-                    <Route path="/signup" element={<Signup />} />
-                </Routes>
-
-        }
-    </BrowserRouter >
-      </div>
-    </ThemeContext.Provider>
+              <Route element={<WebsiteLayout />}>
+                <Route path="" element={<Dashboard />} />
+                <Route path="control" element={<Control />} />
+                <Route path="datalog" element={<Datalog />} />
+                <Route path="ai" element={<AI />} />
+                <Route path="notification" element={<Notification />} />
+                <Route path="*" element={<Navigate replace to="/" />} />
+              </Route>
+            </Routes>
+          ) : (
+            <Routes>
+              <Route path="/" element={<Navigate replace to="login" />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/signup" element={<Signup />} />
+            </Routes>
+          )}
+        </BrowserRouter>
+      </ThemeProvider>
+    </ColorModeContext.Provider>
   );
 };
 
