@@ -1,6 +1,5 @@
 import React from 'react'
 import { FormLabel, Typography, Stack, FormGroup } from '@mui/material'
-
 import ControlSwitch from './ControlSwitch'
 import { useGlobalContext } from '../../../context/index'
 const ManualControl = () => {

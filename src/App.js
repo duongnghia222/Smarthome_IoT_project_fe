@@ -60,7 +60,7 @@ const App = () => {
         <CssBaseline />
         <div id={theme.palette.mode}>
           <BrowserRouter>
-            {true ? (
+            {user ? (
               <Routes>
                 <Route element={<WebsiteLayout />}>
                   <Route path="" element={<Dashboard />} />
@@ -76,6 +76,7 @@ const App = () => {
                 <Route path="/" element={<Navigate replace to="login" />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/signup" element={<Signup />} />
+                <Route path="*" element={<Navigate replace to="login" />} />
               </Routes>
             )}
           </BrowserRouter>

@@ -63,8 +63,7 @@ function Signup() {
           >
             <Form.Group>
               <Form.ControlLabel>Tên đăng ký</Form.ControlLabel>
-              <Form.Control name="name" type="text" placeholder="vd: jakob" />
-              <Form.HelpText tooltip>Tên tài khoản là bắt buộc!</Form.HelpText>
+              <Form.Control name="name" type="text" placeholder="vd: duongnghia222" />
             </Form.Group>
             <Form.Group>
               <Form.ControlLabel>Email</Form.ControlLabel>

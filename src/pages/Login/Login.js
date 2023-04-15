@@ -63,10 +63,10 @@ function Login() {
   }
 
   return (
-    <div className="h-screen flex justify-center items-center px-6">
-      <div className="mx-auto w-[410px] min-w-[320px]">
+    <div className=" flex justify-center items-center px-6">
+      <div className="mx-auto w-[410px] min-w-[320px] my-3">
         <Panel
-          className="mb-2.5"
+          className="mb-2.5 login-panel"
           header={<h3 className="text-center text-3xl">Đăng nhập</h3>}
           bordered
         >
@@ -79,7 +79,7 @@ function Login() {
           >
             <Form.Group>
               <Form.ControlLabel>Tên đăng nhập</Form.ControlLabel>
-              <Form.Control name="name" />
+              <Form.Control name="name" className="w-full flex align-center justify-center"/>
             </Form.Group>
             <Form.Group>
               <Form.ControlLabel>Mật khẩu</Form.ControlLabel>

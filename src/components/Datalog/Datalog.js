@@ -3,10 +3,13 @@ import DiagData from '../DiagData/DiagData';
 import "./style.scss"
 import getData from '../../utils/getData';
 import { useGlobalContext } from '../../context/index';
+import { useTheme } from '@mui/material';
 
 const labels = ['Mon', 'Tue', 'Thir', 'Wed', 'Fri', 'Sat', 'Sun'];
 
 export default function Datalog() {
+    const {theme} = useTheme();
+    console.log(theme);
     const [mode, setMode] = React.useState(0);
     const [data,setData] = React.useState([
         {
