@@ -1,27 +1,29 @@
 import { Grid, Stack, Typography, Slider, Paper, Switch } from '@mui/material';
 import React, { useState, useEffect } from 'react'
+import { useTheme } from '@emotion/react';
 
-
-import AcUnitIcon from '@mui/icons-material/AcUnit';
+import AirIcon from '@mui/icons-material/Air';
 import LightbulbIcon from '@mui/icons-material/Lightbulb';
 import ShowerIcon from '@mui/icons-material/Shower';
-import { deepPurple, lightBlue } from '@mui/material/colors';
+import { lightBlue, cyan} from '@mui/material/colors';
 
 
 import { publish } from '../../../../utils/adafruit'
 
 
 const ControlSwitch = (props) => {
-    const { device, type } = props
-    const [checked, setChecked] = useState(device.value)
+    const theme = useTheme()
+    const my_theme = theme.palette.mode;
+    const { device, type } = props;
+    const [checked, setChecked] = useState(device.value);
     useEffect(() => {
         setChecked(device.value)
-    }, [device])
+    }, [device]);
 
     const types = [
-        { name: "Điều hòa", icon: <AcUnitIcon sx={{ color: checked ? 'white' : 'black' }} /> },
-        { name: "Máy bơm", icon: <ShowerIcon sx={{ color: checked ? 'white' : 'black' }} /> },
-        { name: "Đèn", icon: <LightbulbIcon sx={{ color: checked ? 'white' : 'black' }} /> }
+        { name: "Điều Hòa:  ", icon: <AirIcon sx={{ color: checked ? 'white' : 'black' }} /> },
+        // { name: "Máy Bơm:  ", icon: <ShowerIcon sx={{ color: checked ? 'white' : 'black' }} /> },
+        { name: "Đèn:  ", icon: <LightbulbIcon sx={{ color: checked ? 'white' : 'black' }} /> }
     ]
     const { name, icon } = types[type];
     const handleChange = () => {
@@ -41,14 +43,19 @@ const ControlSwitch = (props) => {
 
     }
     return (
-        <Paper elevation={3} sx={{borderRadius: "2rem", bgcolor: checked ? lightBlue[900] : null }}>
+        
+        <Paper elevation={4} sx={{borderRadius: "3rem", bgcolor: checked ? cyan[400] : null }}>
             <Grid container sx={{width:'140px', height:"140px", padding: 2 }}>
+                <Grid item xs={12} sx={{}}>
+                    <Typography align='center' sx={!checked ? {} : { color: lightBlue[50] }}>{`${name} ${checked ? 'Bật' : 'Tắt'}`}</Typography>
+                </Grid>
                 <Grid item xs={12} sx={{}}>
                     <Stack direction="row" justifyContent="space-between" alignItems="center">
                         {icon}
                         <Switch
                             checked={checked}
                             onChange={handleChange}
+                            color= {my_theme === "light" ? 'primary' : "secondary"}
                         />
                     </Stack>
                 </Grid>
@@ -58,13 +65,11 @@ const ControlSwitch = (props) => {
                         <Slider
                             valueLabelDisplay
                             defaultValue={30}
-                            sx={!checked ? {} : { color: 'white' }} />
+                            color= {my_theme === "light" ? 'primary' : "secondary"}
+                            sx={!checked ? {} : 'white' } />
                     </Stack>
                 </Grid>
 
-                <Grid item xs={12} sx={{}}>
-                    <Typography sx={!checked ? {} : { color: lightBlue[50] }}>{`${name} ${checked ? 'bật' : 'tắt'}`}</Typography>
-                </Grid>
             </Grid>
         </Paper>
     )

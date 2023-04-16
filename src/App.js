@@ -60,7 +60,7 @@ const App = () => {
         <CssBaseline />
         <div id={theme.palette.mode}>
           <BrowserRouter>
-            {user ? (
+            {true ? (
               <Routes>
                 <Route element={<WebsiteLayout />}>
                   <Route path="" element={<Dashboard />} />

@@ -14,10 +14,12 @@ import DiagData from "../DiagData/DiagData";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useGlobalContext } from "../../context/index";
 import getData from "../../utils/getData";
+import { useTheme } from "@emotion/react";
 
 const labels = ["Mon", "Tue", "Thir", "Wed", "Fri", "Sat", "Sun"];
 
 export default function Dashboard() {
+  const theme = useTheme();
   const [mode, setMode] = React.useState(0);
   const { temperature, humidity, lightIntensity, strawStatus } =
     useGlobalContext();
@@ -198,7 +200,7 @@ export default function Dashboard() {
             </div>
           </div>
           <div className="dashboard-header-right-bottom">
-            <DiagData data1={data[mode]} labels={labels} />
+            <DiagData data1={data[mode]} labels={labels} my_theme = {theme.palette.mode} />
             <div className="dashboard-header-right-bottom-mode">
               <button> Ngày</button>
               <button> Tuần</button>

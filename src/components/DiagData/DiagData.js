@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { Line } from 'react-chartjs-2';
 import {
     Chart as ChartJS,
@@ -19,11 +19,18 @@ import {
     Tooltip,
     Legend
   );
-export default function DiagData({data1, labels}) {
+export default function DiagData({data1, labels, my_theme}) {
+    const wht = 'rgba(255, 255, 255, 0.5)';
+    const blk = 'rgba(0, 0, 0, 0.5)';
+
+    const [my_color, set_color] = useState(my_theme === "dark" ? wht : blk)
+    useEffect(() => {
+      set_color(my_theme === 'dark' ? wht : blk);
+    }, [my_theme]);
     const data = {
         labels: labels,
         datasets: [{
-          label: 'Độ ẩm',
+          label: data1.name,
           data: data1.data,
           fill: false,
           borderColor: data1.color,
@@ -31,16 +38,6 @@ export default function DiagData({data1, labels}) {
         }]
       };
       const options = {
-        scales:{
-          yAxes: [
-            {
-              ticks: {
-                beginAtZero: true,
-                stepSize: 0.2
-              }
-            }
-          ]
-        },
         responsive: true,
         plugins: {
           legend: {
@@ -51,11 +48,28 @@ export default function DiagData({data1, labels}) {
             text: `Biểu đồ ${data1.name}`,
             font: {
               size: 20,
-              
             }
           },
      
         },
+        scales: {
+          x: {
+            grid: {
+              color: my_color // set color of x-axis grid
+            },
+            ticks: {
+              color: my_color.replace(/0\.5\)$/, '1)') // set color of x-axis text
+            }
+          },
+          y: {
+            grid: {
+              color: my_color // set color of y-axis grid
+            },
+            ticks: {
+              color: my_color.replace(/0\.5\)$/, '1)') // set color of y-axis text
+            }
+          }
+        }
       };
   return (
     <Line data={data} options={options}/>

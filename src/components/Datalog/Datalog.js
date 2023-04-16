@@ -2,14 +2,12 @@ import React from 'react'
 import DiagData from '../DiagData/DiagData';
 import "./style.scss"
 import getData from '../../utils/getData';
-import { useGlobalContext } from '../../context/index';
-import { useTheme } from '@mui/material';
+import { useTheme } from '@emotion/react';
 
 const labels = ['Mon', 'Tue', 'Thir', 'Wed', 'Fri', 'Sat', 'Sun'];
 
 export default function Datalog() {
-    const {theme} = useTheme();
-    console.log(theme);
+    const theme = useTheme();
     const [mode, setMode] = React.useState(0);
     const [data,setData] = React.useState([
         {
@@ -77,7 +75,7 @@ export default function Datalog() {
             {/* <button  style={{ background: mode === 3 && data[mode].color}} onClick={()=>setMode(3)} className={mode === 3 ? "active" : ""}>Tính trạng cây</button> */}
         </div>
         <div className='datalog-right'>
-            <DiagData data1= {data[mode]} labels={labels}/>
+            <DiagData data1= {data[mode]} labels={labels} my_theme = {theme.palette.mode}/>
             <div className='mode-diag'>
                 <button>Ngày</button>
                 <button>Tháng</button>

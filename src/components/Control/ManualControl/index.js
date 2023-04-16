@@ -10,10 +10,11 @@ const ManualControl = () => {
             feed_id: 'bbc-fan',
             value: airBtn === '0'? false:true
         },
+        // { 
+        //     feed_id: 'bbc-pump',
+        //     value: pumperBtn === '1'? true:false
+        // },        
         { 
-            feed_id: 'bbc-pump',
-            value: pumperBtn === '1'? true:false
-        },        { 
             feed_id: 'bbc-led',
             value: lightBtn === '1'? true:false
         },
