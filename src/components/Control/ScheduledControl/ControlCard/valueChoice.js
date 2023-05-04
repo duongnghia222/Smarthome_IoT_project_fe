@@ -15,13 +15,14 @@ function ChoiceOption() {
     useGlobalContext()
 
   const setControl = () => {
+    console.log(hasControl)
     if (hasControl) {
       setHasControl(false);
       return;
     }
-
+    console.log(fNum)
     if (
-      !fNum.includes("From") &&
+      !fNum.includes("From") ||
       !tNum.includes("To")
     ) {
       setHasControl(true);
@@ -56,9 +57,9 @@ function ChoiceOption() {
       </div>
       <button
         onClick={setControl}
-        className={`setControl-btn ${hasControl && "play"}`}
+        className={`setControl-btn ${hasControl && "play"} ` }
       >
-        {hasControl ? "Clear Control" : "Set Control"}
+        {hasControl ? "Clear" : "Set"}
       </button>
     </div>
   );

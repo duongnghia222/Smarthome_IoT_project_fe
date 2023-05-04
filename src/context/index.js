@@ -44,6 +44,7 @@ const AppProvider = (props)=>{
 
     if (ControlNumF !== "From" && ControlNumF >= temperature && hasControl){
         console.log("aaaaaaaaaaaaaaaaaaaaaaaaaaa");
+
     }
     
     if (ControlNumT !== "To" && ControlNumT <= temperature && hasControl){
@@ -54,7 +55,7 @@ const AppProvider = (props)=>{
     value={{temperature,setTemperature,
         lightIntensity,setLightIntensity,humidity,
         setHumidity,lightBtn,setLightBtn,pumperBtn,setPumperBtn,airBtn,setAirBtn,weatherStatus,setWeatherStatus,
-        setControlNumF, setControlNumT, setHasControl
+        setControlNumF, setControlNumT, setHasControl, hasControl
     }}
     >
         {props.children}
