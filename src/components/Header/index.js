@@ -7,7 +7,7 @@ import LightModeOutlinedIcon from "@mui/icons-material/LightModeOutlined";
 import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
 import { useContext } from "react";
 import "./style.scss";
-const username = process.env.REACT_APP_NAME;
+const username = localStorage.getItem('user').replace(/['"]/g, '') || 'duongnghia'
 function TimeOfDay() {
   const [timeOfDay, setTimeOfDay] = useState("");
 

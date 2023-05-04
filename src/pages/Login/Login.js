@@ -10,6 +10,7 @@ import {
   IconSign,
   IconCheck,
 } from "../../assets/icon";
+import { useAuthContext } from "../../hooks/useAuthContext";
 
 // import { setIdUser } from "@/store/userSlice";
 // import { Toast } from "@/instance/toast.js";
@@ -22,6 +23,8 @@ function Login() {
   let navigate = useNavigate();
   // const dispatch = useDispatch();
   const [form, setForm] = useState({});
+  const {dispatch} = useAuthContext();
+
 
   useEffect(() => {
     window.document.title = "Login Page";
@@ -55,7 +58,9 @@ function Login() {
   }
 
   function loginAccountDemo (){
-    
+    dispatch({type: "DEMO", payload: "duongnghia222"})
+    navigate(`/dashboard/`);
+
   }
 
   function hanldeKeyUp(event) {

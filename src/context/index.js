@@ -25,13 +25,12 @@ const AppProvider = (props)=>{
     const [lightBtn, setLightBtn] = useState(false);
     const [pumperBtn, setPumperBtn] = useState(false);
     const [airBtn, setAirBtn] = useState(false);
-    const [strawStatus, setStrawStatus] = useState("Good");
+    const [weatherStatus, setWeatherStatus] = useState("Good");
+    //const [demo, setDemo] = useState(true);
 
     useEffect(()=>{
        const defaultValue = async () => {
         const latestTemperature = await getLastValue('bbc-temp');
-        setTemperature(latestTemperature);
-        console.log(latestTemperature);
         setLightIntensity(await getLastValue('bbc-light'));
         setHumidity(await getLastValue('bbc-humid'));
         setLightBtn(await getLastValue('bbc-led'));
@@ -44,7 +43,7 @@ const AppProvider = (props)=>{
     return <AppContext.Provider 
     value={{temperature,setTemperature,
         lightIntensity,setLightIntensity,humidity,
-        setHumidity,lightBtn,setLightBtn,pumperBtn,setPumperBtn,airBtn,setAirBtn,strawStatus,setStrawStatus
+        setHumidity,lightBtn,setLightBtn,pumperBtn,setPumperBtn,airBtn,setAirBtn,weatherStatus,setWeatherStatus
     }}
     >
         {props.children}
