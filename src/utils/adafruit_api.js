@@ -12,7 +12,6 @@ export default class MQTTAdafruitIO{
 
     connect(){
         this.client = mqtt.connect(this.brokerUrl,this.options);
-        console.log("run here")
         this.client.on('connect', () => {
             console.log("Connected to Adafruit!")
         });

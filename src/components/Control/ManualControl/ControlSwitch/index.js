@@ -12,6 +12,9 @@ import { publish } from '../../../../utils/adafruit'
 
 
 const ControlSwitch = (props) => {
+    const [sliderValueFan, setSliderValueFan] = useState("30");
+    const [sliderValueLed, setSliderValueLed] = useState("30");
+    
     const theme = useTheme()
     const my_theme = theme.palette.mode;
     const { device, type } = props;
@@ -20,11 +23,23 @@ const ControlSwitch = (props) => {
         setChecked(device.value)
     }, [device]);
 
+
     const types = [
         { name: "Điều Hòa:  ", icon: <AirIcon sx={{ color: checked ? 'white' : 'black' }} /> },
-        // { name: "Máy Bơm:  ", icon: <ShowerIcon sx={{ color: checked ? 'white' : 'black' }} /> },
         { name: "Đèn:  ", icon: <LightbulbIcon sx={{ color: checked ? 'white' : 'black' }} /> }
     ]
+
+    function handleSlide(e, value){
+        if (device.feed_id === 'bbc-led'){
+            setSliderValueLed(`${value}`);
+            return;
+        }
+        if (device.feed_id === 'bbc-fan'){
+            setSliderValueFan(`${value}`);
+        }
+        
+        
+    }
     const { name, icon } = types[type];
     const handleChange = () => {
         setChecked(state => {
@@ -32,10 +47,10 @@ const ControlSwitch = (props) => {
                 publish(device.feed_id, '0')
             } else {
                 if (device.feed_id === 'bbc-fan'){
-                    publish(device.feed_id,'100')
+                    publish(device.feed_id, sliderValueFan)
                 }
-                else{
-                    publish(device.feed_id, '1')
+                if (device.feed_id === 'bbc-led'){
+                    publish(device.feed_id, sliderValueLed)
                 }
             }
             return !state
@@ -65,6 +80,8 @@ const ControlSwitch = (props) => {
                         <Slider
                             valueLabelDisplay
                             defaultValue={30}
+                            onChange={handleSlide}
+                            disabled={checked}
                             color= {my_theme === "light" ? 'primary' : "secondary"}
                             sx={!checked ? {} : 'white' } />
                     </Stack>

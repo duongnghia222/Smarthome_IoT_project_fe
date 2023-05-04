@@ -45,13 +45,13 @@ const AppProvider = (props)=>{
 
     if (ControlNumF !== "From" && parseInt(ControlNumF) >= parseInt(temperature) && hasControl){
         console.log(parseInt(ControlNumF));
-        publish('bbc-fan', '0')
+        publish('bbc-fan', '0');
 
     }
     
     if (ControlNumT !== "To" && parseInt(ControlNumT) <= parseInt(temperature) && hasControl){
         console.log(parseInt(ControlNumT));
-        publish('bbc-fan', '1')
+        publish('bbc-fan', '99');
     }
 
     return <AppContext.Provider 

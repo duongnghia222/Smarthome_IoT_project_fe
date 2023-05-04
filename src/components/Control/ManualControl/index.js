@@ -16,7 +16,7 @@ const ManualControl = () => {
         // },        
         { 
             feed_id: 'bbc-led',
-            value: lightBtn === '1'? true:false
+            value: lightBtn === '0'? false:true
         },
     ]
     return (
