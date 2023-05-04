@@ -20,7 +20,7 @@ function Signup() {
 //   const [cookies, setCookie] = useCookies(["accessToken", "refreshToken"]);
 
   useEffect(() => {
-    window.document.title = 'Miru | Signup Page';
+    window.document.title = 'Smarthome | Signup Page';
   }, [])
 
   function resgisterAccount() {
