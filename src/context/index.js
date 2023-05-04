@@ -30,7 +30,7 @@ const AppProvider = (props)=>{
 
     useEffect(()=>{
        const defaultValue = async () => {
-        const latestTemperature = await getLastValue('bbc-temp');
+        setTemperature(await getLastValue('bbc-temp'));
         setLightIntensity(await getLastValue('bbc-light'));
         setHumidity(await getLastValue('bbc-humid'));
         setLightBtn(await getLastValue('bbc-led'));
