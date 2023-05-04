@@ -2,7 +2,7 @@ import { Form, ButtonToolbar, Button, Panel, Divider } from "rsuite";
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
-import "./Login.scss"
+import "./Login.scss";
 import {
   IconGithub,
   IconGoogle,
@@ -11,12 +11,10 @@ import {
   IconCheck,
 } from "../../assets/icon";
 
-
 // import { setIdUser } from "@/store/userSlice";
 // import { Toast } from "@/instance/toast.js";
 // import { assignToken } from '@/utils';
 // import api from "@/api/index.js";
-
 
 const pathLoginAccount = "api/user/login";
 
@@ -26,8 +24,8 @@ function Login() {
   const [form, setForm] = useState({});
 
   useEffect(() => {
-    window.document.title = 'Login Page';
-  }, [])
+    window.document.title = "Login Page";
+  }, []);
 
   function loginAccount() {
     // const request = api.post(pathLoginAccount, form);
@@ -56,6 +54,10 @@ function Login() {
     // });
   }
 
+  function loginAccountDemo (){
+    
+  }
+
   function hanldeKeyUp(event) {
     if (event.key === "Enter") {
       loginAccount();
@@ -79,13 +81,20 @@ function Login() {
           >
             <Form.Group>
               <Form.ControlLabel>Tên đăng nhập</Form.ControlLabel>
-              <Form.Control name="name" className="w-full flex align-center justify-center"/>
+              <Form.Control
+                name="name"
+                className="w-full flex align-center justify-center"
+              />
             </Form.Group>
             <Form.Group>
               <Form.ControlLabel>Mật khẩu</Form.ControlLabel>
-              <Form.Control name="password" type="password" autoComplete="off" />
+              <Form.Control
+                name="password"
+                type="password"
+                autoComplete="off"
+              />
             </Form.Group>
-            <Form.Group className="relative pb-10">
+            <Form.Group className="relative pb-10 pt-5 ">
               <ButtonToolbar>
                 <Button
                   onClick={loginAccount}
@@ -101,6 +110,14 @@ function Login() {
               </ButtonToolbar>
             </Form.Group>
           </Form>
+          <Button
+            onClick={loginAccountDemo}
+            className="w-full flex align-center justify-center leading-normal"
+            appearance="ghost"
+          >
+            Đăng nhập với Demo Account
+            <IconSign className="ml-2" />
+          </Button>
         </Panel>
         <Divider>hoặc</Divider>
         <Panel className="mt-2.5" bordered>
@@ -117,12 +134,10 @@ function Login() {
               Tiến hành đăng ký
               <IconCheck />
             </Button>
-            <Divider>
-              đăng nhập với
-            </Divider>
+            <Divider>đăng nhập với</Divider>
             <div className="w-min flex m-auto">
               <div className="wrap w-8 h-8 relative cursor-pointer	">
-              <div className="inset-0 bg-black absolute rounded-full"></div>
+                <div className="inset-0 bg-black absolute rounded-full"></div>
                 <IconGithub
                   className="fill-white absolute left-0 top-0"
                   width={32}
@@ -145,85 +160,6 @@ function Login() {
 
 export default Login;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // import { useState } from "react"
 // import { useLogin } from "../../hooks/useLogin"
 // import { useNavigate } from "react-router"
@@ -241,7 +177,7 @@ export default Login;
 //             </div>
 //             <div className='body-login-right'>
 //                 <h2>Welcome To Smart Home</h2>
-        
+
 //                 <Formik
 //        initialValues={{password: '', email: '' }}
 //        validationSchema={Yup.object({
@@ -259,11 +195,11 @@ export default Login;
 //          <label htmlFor="email">Email Addesss</label>
 //          <Field name="email" type="text" />
 //          <ErrorMessage name="email">{msg=><div className="errorMessage">{msg}</div>}</ErrorMessage>
- 
+
 //          <label htmlFor="password">Password</label>
 //          <Field name="password" type="password"/>
 //          <ErrorMessage name="password" className="errorMessage">{msg=><div className="errorMessage">{msg}</div>}</ErrorMessage>
- 
+
 //          <button type="submit" className="btn-login">Submit</button>
 //          <button type="button" className="btn-signup" onClick={()=>navigate("/signup")}>Go to Signup</button>
 

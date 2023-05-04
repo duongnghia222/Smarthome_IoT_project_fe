@@ -24,7 +24,6 @@ const App = () => {
     setLightBtn,
     setPumperBtn,
     setAirBtn,
-    setStrawStatus,
   } = useGlobalContext();
   client.on("message", (topic, message, packet) => {
     console.log("Received '" + message + "' on '" + topic + "'");
@@ -60,7 +59,7 @@ const App = () => {
         <CssBaseline />
         <div id={theme.palette.mode}>
           <BrowserRouter>
-            {true ? (
+            {user ? (
               <Routes>
                 <Route element={<WebsiteLayout />}>
                   <Route path="" element={<Dashboard />} />

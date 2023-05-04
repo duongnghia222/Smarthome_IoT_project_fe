@@ -9,17 +9,23 @@
 }
 
 
-.rs-panel-body, .rs-panel-header{
+.rs-panel-header{
     padding: 20px;
+    padding-bottom: 0px;
+}
+
+.rs-panel-body{
+    padding: 20px;
+    padding-top: 3px;
+}
+.rs-form-group{
+    padding: 5px;
 }
 
 .rs-form{
     padding-top: 0;
 }
 
-.rs-form:not(.rs-form-inline) .rs-form-group:not(:last-child){
-    margin-bottom: 24px;
-}
 
 .rs-form-vertical .rs-form-group .rs-form-control-label {
     display: block;
