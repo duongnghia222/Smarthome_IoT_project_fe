@@ -153,7 +153,7 @@ export default function Dashboard() {
   return (
     <div className="dashboard">
       <div className="dashboard-header">
-        <div className="dashboard-header-left ">
+        <div className="dashboard-header-left">
             <Clock/>
         </div>
         <div className="dashboard-header-right">
