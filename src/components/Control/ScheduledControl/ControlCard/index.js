@@ -15,7 +15,7 @@ import { StyledTimeField, StyledSlider, StyledStroke } from './styles';
 
 const types = [
     { name: "Điều hòa", icon: <DeviceThermostatIcon color="primary" sx={{ fontSize: "3rem" }} />, color: red[500] },
-    { name: "Máy bơm", icon: <OpacityIcon color="primary" sx={{ fontSize: "3rem" }} />, color: cyan[300] },
+    // { name: "Máy bơm", icon: <OpacityIcon color="primary" sx={{ fontSize: "3rem" }} />, color: cyan[300] },
     { name: "Đèn", icon: <LightModeIcon color="primary" sx={{ fontSize: "3rem" }} />, color: yellow[500] }
 ]
 
@@ -58,11 +58,7 @@ const ControlCard = ({ type }) => {
                                 {icon}
                             </CircularProgressbarWithChildren>
                         </Box>
-                        <Stack spacing={2} width='100%' direction="row" alignItems="center">
-                            <Typography sx={{ width: '4rem' }}>Tắt</Typography>
-                            <StyledSlider defaultValue={50} valueLabelDisplay="auto" />
-                            <Typography sx={{ width: '4rem' }}>100%</Typography>
-                        </Stack>
+                
                             
                     </Stack>
                 </CardContent>

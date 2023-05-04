@@ -12,14 +12,14 @@ const ScheduledControl = () => {
                     <Typography  color={"white"} variant="h5" sx={{ textTransform: "uppercase", px: 2 }}>Đặt lịch trình</Typography>
                 </FormLabel>
                 <StyledSwitch defaultChecked />
-                <ButtonGroup sx={{ ml: 'auto' }}>
+                {/* <ButtonGroup sx={{ ml: 'auto' }}>
                     <Button sx={{ width: 100, border: '1px solid white'}} type="submit" variant="contained">Lưu</Button>
                     <Button sx={{ width: 100, border: '1px solid white'}} type="reset" variant="contained" color='error'>Làm mới</Button>
-                </ButtonGroup>
+                </ButtonGroup> */}
             </Stack>
 
             <Grid container spacing={2} justifyContent="space-around">
-                {[0, 1, 2].map(x => <Grid item key={x} sx={12} md={4}>
+                {[0, 1].map(x => <Grid item key={x} sx={12} md={4}>
                     <ControlCard type={x} />
                 </Grid>)
                 }
