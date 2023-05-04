@@ -6,11 +6,10 @@ import DeviceThermostatIcon from '@mui/icons-material/DeviceThermostat';
 import OpacityIcon from '@mui/icons-material/Opacity';
 import LightModeIcon from '@mui/icons-material/LightMode';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
-
+import ChoiceOption from './valueChoice';
 import { red, cyan, yellow } from '@mui/material/colors';
 import { CircularProgressbarWithChildren } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
-
 import { StyledTimeField, StyledSlider, StyledStroke } from './styles';
 
 const types = [
@@ -36,16 +35,12 @@ const ControlCard = ({ type }) => {
             <Card elevation={3} sx={{mb:0}}>
                 <CardHeader title={name} sx={{pb:0}}></CardHeader>
                 <CardContent>
-                    <Stack direction="row" alignItems="center" justifyContent="space-between">
-                        <StyledTimeField label={<Typography sx={{ display: "flex", alignItems: "center" }}>
-                            <LightModeIcon />Bắt đầu</Typography>} />
-                        <Typography sx={{ px: 1 }}>to</Typography>
-                        <StyledTimeField label={<Typography sx={{ display: "flex", alignItems: "center" }}>
-                            <DarkModeIcon />Kết thúc</Typography>} />
+                    <Stack direction="row" alignItems="center" justifyContent="space-between">                
+                        <ChoiceOption/>
                     </Stack>
                     <Stack alignItems="center" padding={3} pb={0} >
                         <Box sx={{ maxWidth: "9rem" }}>
-                            <CircularProgressbarWithChildren
+                            {/* <CircularProgressbarWithChildren
                                 value={50}
                                 styles={{
                                     path: {
@@ -56,9 +51,13 @@ const ControlCard = ({ type }) => {
                                     }
                                 }}>
                                 {icon}
-                            </CircularProgressbarWithChildren>
+                            </CircularProgressbarWithChildren> */}
                         </Box>
-                
+                        {/* <Stack spacing={2} width='100%' direction="row" alignItems="center">
+                            <Typography sx={{ width: '4rem' }}>Tắt</Typography>
+                            <StyledSlider defaultValue={50} valueLabelDisplay="auto" />
+                            <Typography sx={{ width: '4rem' }}>100%</Typography>
+                        </Stack> */}
                             
                     </Stack>
                 </CardContent>
