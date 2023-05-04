@@ -86,6 +86,10 @@ const ControlSwitch = (props) => {
                             sx={!checked ? {} : 'white' } />
                     </Stack>
                 </Grid>
+                <Grid item xs={12} sx={{}}>
+                    <Typography align='center' sx={!checked ? {} : { color: lightBlue[50] }}>{device.feed_id === 'bbc-fan' ? sliderValueFan : sliderValueLed}</Typography>
+                </Grid>
+
 
             </Grid>
         </Paper>
