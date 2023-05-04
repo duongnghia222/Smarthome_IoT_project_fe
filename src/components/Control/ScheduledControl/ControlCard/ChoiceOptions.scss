@@ -6,6 +6,12 @@
     flex-direction: column;
   }
   
+.setControl-btn{
+  margin-top: 10px;
+}
+
+
+
   .wrapper-option {
     display: flex;
     align-items: center;
@@ -37,7 +43,7 @@
   }
   
   select::-webkit-scrollbar-thumb {
-    background: orange;
+    background: rgb(5, 64, 109);
     border-radius: 8px;
     border-right: 2px solid #ffffff;
   }
@@ -62,7 +68,7 @@
   }
   
   .play {
-    background-color: orange;
+    background-color: rgb(39, 169, 224);
     color: #000;
   }
   

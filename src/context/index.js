@@ -1,5 +1,6 @@
 import {useContext, createContext, useState,useEffect} from "react";
 import axios from 'axios';
+import { publish } from '../utils/adafruit'
 const key = process.env.REACT_APP_KEY
 const username = process.env.REACT_APP_NAME
 
@@ -42,13 +43,15 @@ const AppProvider = (props)=>{
        defaultValue()
     },[]);
 
-    if (ControlNumF !== "From" && ControlNumF >= temperature && hasControl){
-        console.log("aaaaaaaaaaaaaaaaaaaaaaaaaaa");
+    if (ControlNumF !== "From" && parseInt(ControlNumF) >= parseInt(temperature) && hasControl){
+        console.log(parseInt(ControlNumF));
+        publish('bbc-fan', '0')
 
     }
     
-    if (ControlNumT !== "To" && ControlNumT <= temperature && hasControl){
-    console.log("wwwwwwwwwwwwwwwwwwwwwwwwwww");
+    if (ControlNumT !== "To" && parseInt(ControlNumT) <= parseInt(temperature) && hasControl){
+        console.log(parseInt(ControlNumT));
+        publish('bbc-fan', '1')
     }
 
     return <AppContext.Provider 

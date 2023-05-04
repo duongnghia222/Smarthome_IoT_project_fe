@@ -1,16 +1,15 @@
 import { useState } from 'react'
 
 function useSelect(initialValue) {
-    const [value, setValue] = useState(initialValue)
-
+    const [value, setValue] = useState(initialValue);
     const data = {
         value,
         onChange: e => {
-            setValue(e.target.value)
+            setValue(e.target.value);
         }
     }
 
-    return [value, data]
+    return [value, data];
 }
 
 export default useSelect

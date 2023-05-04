@@ -4,27 +4,24 @@ import useSelect from "../../../../hooks/useSelect";
 import { useGlobalContext } from "../../../../context";
 
 function ChoiceOption() {
-  const fromNumber = Array.from(Array(60).keys());
-  const toNumber = Array.from(Array(60).keys());
+  const fromNumber = ["None", ...Array.from(Array(41).keys())];
+  const toNumber = ["None", ...Array.from(Array(41).keys())];
   const [fNum, setFNum] = useSelect("From");
   const [tNum, setTNum] = useSelect("To");
-  const { setControlNumF,
-    setControlNumT,
-    hasControl,
-    setHasControl} =
-    useGlobalContext()
+  const { setControlNumF, setControlNumT, hasControl, setHasControl } =
+    useGlobalContext();
 
   const setControl = () => {
-    console.log(hasControl)
+    console.log(hasControl);
     if (hasControl) {
       setHasControl(false);
       return;
     }
-    console.log(fNum)
-    if (
-      !fNum.includes("From") ||
-      !tNum.includes("To")
-    ) {
+    if (!fNum.includes("From") || !tNum.includes("To")) {
+        
+      if (parseInt(fNum) > parseInt(tNum)) {
+        return;
+      }
       setHasControl(true);
       setControlNumF(`${fNum}`);
       setControlNumT(`${tNum}`);
@@ -34,19 +31,21 @@ function ChoiceOption() {
   return (
     <div className="option-Container">
       <div className={`wrapper-option ${hasControl && "disable"}`}>
+        <label>Từ</label>
         <select {...setFNum}>
           <option disabled value="fNum">
-            From
+            Độ C
           </option>
           {fromNumber.map((fNum, index) => (
             <option key={index} value={fNum}>
               {fNum}
             </option>
           ))}
-        </select>
+        </select> 
+        <label>Đến</label>
         <select {...setTNum}>
           <option disabled value="tNum">
-            To
+            Độ C
           </option>
           {toNumber.map((tNum, index) => (
             <option key={index} value={tNum}>
@@ -57,9 +56,9 @@ function ChoiceOption() {
       </div>
       <button
         onClick={setControl}
-        className={`setControl-btn ${hasControl && "play"} ` }
+        className={`setControl-btn ${hasControl && "play"} `}
       >
-        {hasControl ? "Clear" : "Set"}
+        {hasControl ? "Đã Đặt" : "Đặt "}
       </button>
     </div>
   );
