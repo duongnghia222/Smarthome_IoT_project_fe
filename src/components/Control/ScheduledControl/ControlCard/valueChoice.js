@@ -56,7 +56,7 @@ function ChoiceOption() {
       </div>
       <button
         onClick={setControl}
-        className={`setControl-btn ${hasControl && "play"} `}
+        className={`setControl-btn ${hasControl && "play"} hover: font-bold py-2 px-4 rounded cursor-pointer`}
       >
         {hasControl ? "Đã Đặt" : "Đặt "}
       </button>

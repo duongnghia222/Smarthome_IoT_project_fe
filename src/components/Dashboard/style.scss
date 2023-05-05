@@ -12,7 +12,8 @@
 #dark button{
     background-color: #101522;
     color: white;
-    border-color: white;
+    // border-color: white;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 #dark .dashboard-bottom-row-container{
