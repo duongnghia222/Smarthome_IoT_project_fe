@@ -46,7 +46,7 @@ export default function Header() {
     <div className="header-home">
       <div className="header-home-wrap">
         <div className="header-home-left">
-          <h2>Chào mừng trở lại, {username}</h2>
+          <h3>Chào mừng {username}</h3>
           <TimeOfDay />
         </div>
         <div className="header-home-right">
