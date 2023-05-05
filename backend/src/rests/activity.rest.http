@@ -1,0 +1,19 @@
+@urlDev=http://localhost:3001
+
+### add data
+POST {{urlDev}}/activity
+Content-Type: application/json
+
+{
+    "activityInfo":{
+        "userKey": "duongnghia222",
+        "description": "Turn on the light",
+        "deviceId": 1,
+        "deviceName": "Light",
+        "activityId": 1
+    }
+}
+
+###get data
+GET {{urlDev}}/activity?limit=1&offset=1
+Content-Type: application/json

@@ -1,0 +1,13 @@
+@urlDev=http://localhost:3001
+
+### add data
+POST {{urlDev}}/user
+Content-Type: application/json
+
+{
+    "userInfo":{
+        "username" : "Heo_Rey",
+        "password" : "123456",
+        "key" : "aio_dKJy32dJkMvsexDDgdoVbYTPNqxU"
+    }
+}

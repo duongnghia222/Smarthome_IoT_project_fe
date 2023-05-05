@@ -1,0 +1,17 @@
+@urlDev=http://localhost:3001
+
+### add data
+POST {{urlDev}}/notification
+Content-Type: application/json
+
+{
+    "notificationInfo":{
+        "userKey": "duongnghia222",
+        "description": "Let's study",
+        "notificationId": 1
+    }
+}
+
+###get data
+GET {{urlDev}}/notification?limit=1&offset=0
+Content-Type: application/json
