@@ -1,4 +1,9 @@
-import { faBell, faCaretDown, faGear } from "@fortawesome/free-solid-svg-icons";
+import {
+  faBell,
+  faCaretDown,
+  faGear,
+  faSignOut,
+} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState, useEffect } from "react";
 import { Box, IconButton, useTheme } from "@mui/material";
@@ -6,8 +11,11 @@ import { ColorModeContext } from "../../theme";
 import LightModeOutlinedIcon from "@mui/icons-material/LightModeOutlined";
 import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
 import { useContext } from "react";
+import { useAuthContext } from "../../hooks/useAuthContext";
 import "./style.scss";
-const username = localStorage.getItem('user').replace(/['"]/g, '') || 'duongnghia'
+
+const username =
+  localStorage.getItem("user").replace(/['"]/g, "") || "duongnghia";
 function TimeOfDay() {
   const [timeOfDay, setTimeOfDay] = useState("");
 
@@ -30,6 +38,10 @@ function TimeOfDay() {
 export default function Header() {
   const theme = useTheme();
   const colorMode = useContext(ColorModeContext);
+  const { dispatch } = useAuthContext();
+  const handleLogout = () => {
+    dispatch({ type: "LOGOUT", payload: null });
+  };
   return (
     <div className="header-home">
       <div className="header-home-wrap">
@@ -51,10 +63,13 @@ export default function Header() {
           <div>
             <FontAwesomeIcon icon={faBell} />
           </div>
-          <div className="name-user">
-            <img src="./man.png" alt="user" className="avar-user" />
-            <h2>{username}</h2>
-            <FontAwesomeIcon icon={faCaretDown} />
+          <div className="name-user space-x-5">
+            <img src="./man.png" alt="user" className="avar-user w-1/3" />
+            <h2 className="">{username}</h2>
+            {/* <FontAwesomeIcon icon={faCaretDown} /> */}
+            <button onClick={handleLogout} className="px-5">
+              <FontAwesomeIcon icon={faSignOut} />
+            </button>
           </div>
         </div>
       </div>

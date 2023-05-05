@@ -36,10 +36,7 @@ const links = [
     }
 ]
 export default function Sidebar() {
-  const {dispatch} = useAuthContext();
-  const handleLogout = ()=>{
-    dispatch({type: "LOGOUT", payload: null})
-  }
+  
   // const [active, setActive] = useState(123);
   return (
     <>
@@ -56,10 +53,7 @@ export default function Sidebar() {
       }
     </div>
     </div>
-   <div className='sidebar-bottom'>
-    <button onClick={handleLogout}
-      >Đăng xuất</button>
-   </div>
+   
     </>
   )
 }
