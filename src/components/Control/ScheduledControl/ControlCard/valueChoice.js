@@ -29,8 +29,8 @@ function ChoiceOption() {
   };
 
   return (
-    <div className="option-Container">
-      <div className={`wrapper-option ${hasControl && "disable"}`}>
+    <div className="option-Container rounded-xl">
+      <div className={`wrapper-option ${hasControl && "disable"} `}>
         <label>Từ</label>
         <select {...setFNum}>
           <option disabled value="fNum">
@@ -56,7 +56,7 @@ function ChoiceOption() {
       </div>
       <button
         onClick={setControl}
-        className={`setControl-btn ${hasControl && "play"} hover: font-bold py-2 px-4 rounded cursor-pointer`}
+        className={`setControl-btn ${hasControl && "play"} hover: font-bold py-2 px-4 rounded-xl cursor-pointer`}
       >
         {hasControl ? "Đã Đặt" : "Đặt "}
       </button>

@@ -67,7 +67,7 @@ export default function Header() {
             <img src="./man.png" alt="user" className="avar-user w-1/3" />
             <h2 className="">{username}</h2>
             {/* <FontAwesomeIcon icon={faCaretDown} /> */}
-            <button onClick={handleLogout} className="px-5">
+            <button onClick={handleLogout} className="px-5 hover: font-bold py-2 px-4 rounded-full cursor-pointer">
               <FontAwesomeIcon icon={faSignOut} />
             </button>
           </div>
