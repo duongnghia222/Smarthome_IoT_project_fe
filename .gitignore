@@ -29,3 +29,7 @@ Face_Recognition/.idea
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+Hardware/__pycache__
+Hardware/.idea
+Hardware/venv
