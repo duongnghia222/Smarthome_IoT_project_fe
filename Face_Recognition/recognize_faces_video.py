@@ -40,8 +40,8 @@ while True:
                 counts[name] = counts.get(name, 0) + 1
 
             name = max(counts, key=counts.get)
-
-        names.append(name)
+        if name not in names:  # avoid same detection
+            names.append(name)
 
     for ((top, right, bottom, left), name) in zip(boxes, names):
         top = int(top * r)
