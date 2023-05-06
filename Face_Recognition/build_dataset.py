@@ -1,7 +1,7 @@
 import cv2
 import os
 
-name = 'admin'
+name = 'tham'
 video = cv2.VideoCapture(0)
 total = 0
 images = []
@@ -18,7 +18,7 @@ while True:
     elif key == ord("q"):
         break
 
-output_dir = 'dataset' + name
+output_dir = 'dataset/' + name
 if not os.path.exists(output_dir):
     os.makedirs(output_dir)
 
