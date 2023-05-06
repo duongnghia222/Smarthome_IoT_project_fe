@@ -1,7 +1,7 @@
 import cv2
 import os
 
-name = 'tham'
+name = 'tham'  # change this to person's name you want the model to recognize
 video = cv2.VideoCapture(0)
 total = 0
 images = []

@@ -45,13 +45,3 @@ for (i, folder) in enumerate(folders):
     with open(encodingFile, "wb") as f:
         pickle.dump(data, f)
     print("done with folder", folder)
-
-
-
-
-
-
-
-
-
-
