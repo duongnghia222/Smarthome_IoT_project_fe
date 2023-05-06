@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/Smarthome_IoT_project_fe/static/css/main.cb916868.css",
+    "main.js": "/Smarthome_IoT_project_fe/static/js/main.f57ea7fe.js",
+    "static/media/digital-7.ttf": "/Smarthome_IoT_project_fe/static/media/digital-7.ae951a188b593952b384.ttf",
+    "index.html": "/Smarthome_IoT_project_fe/index.html",
+    "main.cb916868.css.map": "/Smarthome_IoT_project_fe/static/css/main.cb916868.css.map",
+    "main.f57ea7fe.js.map": "/Smarthome_IoT_project_fe/static/js/main.f57ea7fe.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.cb916868.css",
+    "static/js/main.f57ea7fe.js"
+  ]
+}
