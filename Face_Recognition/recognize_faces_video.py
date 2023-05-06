@@ -38,10 +38,10 @@ while True:
             for i in matchedIdxs:
                 name = data["names"][i]
                 counts[name] = counts.get(name, 0) + 1
+            if name not in names:  # avoid same detection
+                name = max(counts, key=counts.get)
 
-            name = max(counts, key=counts.get)
-        if name not in names:  # avoid same detection
-            names.append(name)
+        names.append(name)
 
     for ((top, right, bottom, left), name) in zip(boxes, names):
         top = int(top * r)
