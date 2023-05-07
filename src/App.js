@@ -17,6 +17,8 @@ import client from "./utils/adafruit";
 const App = () => {
   const [theme, colorMode] = useMode();
   const { user } = useAuthContext();
+  console.log("line 20", user);
+  
   const {
     setTemperature,
     setLightIntensity,
@@ -26,42 +28,43 @@ const App = () => {
     setAirBtn,
 
   } = useGlobalContext();
-  client.on("message", (topic, message, packet) => {
-    console.log("Received '" + message + "' on '" + topic + "'");
-    switch (topic.split("/")[2]) {
-      case "bbc-humid":
-        setHumidity(message.toString());
-        break;
-      case "bbc-temp":
-        setTemperature(message.toString());
-        break;
-      case "bbc-light":
-        setLightIntensity(message.toString());
-        break;
-      case "bbc-fan":
-        setAirBtn(message.toString());
-        break;
-      // case 'w-status':
-      //     setStrawStatus((message.toString()));
-      //     break;
-      case "bbc-pump":
-        setPumperBtn(message.toString());
-        break;
-      case "bbc-led":
-        setLightBtn(message.toString());
-        break;
-      default:
-        break;
-    }
-  });
+
+  if (user) {
+    client.on("message", (topic, message, packet) => {
+      console.log("Received '" + message + "' on '" + topic + "'");
+      switch (topic.split("/")[2]) {
+        case "bbc-humid":
+          setHumidity(message.toString());
+          break;
+        case "bbc-temp":
+          setTemperature(message.toString());
+          break;
+        case "bbc-light":
+          setLightIntensity(message.toString());
+          break;
+        case "bbc-fan":
+          setAirBtn(message.toString());
+          break;
+        case "bbc-pump":
+          setPumperBtn(message.toString());
+          break;
+        case "bbc-led":
+          setLightBtn(message.toString());
+          break;
+        default:
+          break;
+      }
+    });
+  }
+
   return (
     <ColorModeContext.Provider value={colorMode}>
       <ThemeProvider theme={theme}>
         <CssBaseline />
         <div id={theme.palette.mode}>
           <BrowserRouter>
-            {user ? (
-              <Routes>
+            <Routes>
+              {user ? (
                 <Route element={<WebsiteLayout />}>
                   <Route path="" element={<Dashboard />} />
                   <Route path="control" element={<Control />} />
@@ -70,15 +73,15 @@ const App = () => {
                   <Route path="notification" element={<Notification />} />
                   <Route path="*" element={<Navigate replace to="/" />} />
                 </Route>
-              </Routes>
-            ) : (
-              <Routes>
-                <Route path="/" element={<Navigate replace to="login" />} />
-                <Route path="/login" element={<Login />} />
-                <Route path="/signup" element={<Signup />} />
-                <Route path="*" element={<Navigate replace to="login" />} />
-              </Routes>
-            )}
+              ) : (
+                <>
+                  <Route path="/" element={<Navigate replace to="login" />} />
+                  <Route path="/login" element={<Login />} />
+                  <Route path="/signup" element={<Signup />} />
+                  <Route path="*" element={<Navigate replace to="login" />} />
+                </>
+              )}
+            </Routes>
           </BrowserRouter>
         </div>
       </ThemeProvider>

@@ -14,8 +14,8 @@ import { useContext } from "react";
 import { useAuthContext } from "../../hooks/useAuthContext";
 import "./style.scss";
 
-const username =
-  localStorage.getItem("user").replace(/['"]/g, "") || "duongnghia";
+const storedUser = localStorage.getItem("user");
+const username = (storedUser && storedUser.replace(/['"]/g, "")) || "duongnghia";
 function TimeOfDay() {
   const [timeOfDay, setTimeOfDay] = useState("");
 
