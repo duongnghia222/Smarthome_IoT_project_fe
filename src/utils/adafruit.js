@@ -23,6 +23,10 @@ const options = {
 };
 
 const client = mqtt.connect(brokerUrl, options);
+console.log(client)
+if(!client.connected){
+  alert('maybe wrong adafruit active key')
+}
 client.on('connect', () => {
   console.log("Connected to Adafruit!");
 });
