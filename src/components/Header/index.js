@@ -3,6 +3,7 @@ import {
   faCaretDown,
   faGear,
   faSignOut,
+  faUser
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState, useEffect } from "react";
@@ -67,7 +68,7 @@ export default function Header() {
             <FontAwesomeIcon icon={faBell} />
           </div>
           <div className="name-user space-x-5">
-            <img src="./man.png" alt="user" className="avar-user w-1/3" />
+            <FontAwesomeIcon icon={faUser} className="px-3"/>
             <h2 className="">{username}</h2>
             {/* <FontAwesomeIcon icon={faCaretDown} /> */}
             <button onClick={handleLogout} className="px-5 hover: font-bold py-2 rounded-full cursor-pointer">
