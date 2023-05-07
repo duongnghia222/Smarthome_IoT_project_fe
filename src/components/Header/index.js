@@ -14,8 +14,9 @@ import { useContext } from "react";
 import { useAuthContext } from "../../hooks/useAuthContext";
 import "./style.scss";
 
-const storedUser = localStorage.getItem("user");
-const username = (storedUser !== 'null' && storedUser.replace(/['"]/g, "")) || "duongnghia222";
+
+const username = "duongnghia222";
+
 
 
 function TimeOfDay() {
