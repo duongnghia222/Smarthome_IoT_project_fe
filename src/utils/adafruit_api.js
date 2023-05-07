@@ -30,9 +30,6 @@ export default class MQTTAdafruitIO{
                 case 'bbc-fan':
                     this.setter.setAirBtn(parseInt(message.toString()));
                     break;
-                case 'bbc-pump':
-                    this.setter.setPumperBtn(parseInt(message.toString()));
-                    break;
                 case 'bbc-led':
                     this.setter.setLightBtn(parseInt(message.toString()));
                     break;

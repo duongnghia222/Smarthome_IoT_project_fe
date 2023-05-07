@@ -30,7 +30,6 @@ subscribe('bbc-light')
 // subscribe('weather-status')
 subscribe('bbc-temp')
 subscribe('bbc-fan')
-subscribe('bbc-pump')
 subscribe('bbc-led')
 
 export default client;

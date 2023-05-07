@@ -19,43 +19,43 @@ const App = () => {
   const { user } = useAuthContext();
   console.log("line 20", user);
   
-  const {
-    setTemperature,
-    setLightIntensity,
-    setHumidity,
-    setLightBtn,
-    setPumperBtn,
-    setAirBtn,
+  // const {
+  //   setTemperature,
+  //   setLightIntensity,
+  //   setHumidity,
+  //   setLightBtn,
+  //   setPumperBtn,
+  //   setAirBtn,
 
-  } = useGlobalContext();
+  // } = useGlobalContext();
 
-  if (user) {
-    client.on("message", (topic, message, packet) => {
-      console.log("Received '" + message + "' on '" + topic + "'");
-      switch (topic.split("/")[2]) {
-        case "bbc-humid":
-          setHumidity(message.toString());
-          break;
-        case "bbc-temp":
-          setTemperature(message.toString());
-          break;
-        case "bbc-light":
-          setLightIntensity(message.toString());
-          break;
-        case "bbc-fan":
-          setAirBtn(message.toString());
-          break;
-        case "bbc-pump":
-          setPumperBtn(message.toString());
-          break;
-        case "bbc-led":
-          setLightBtn(message.toString());
-          break;
-        default:
-          break;
-      }
-    });
-  }
+  // if (user) {
+  //   client.on("message", (topic, message, packet) => {
+  //     console.log("Received '" + message + "' on '" + topic + "'");
+  //     switch (topic.split("/")[2]) {
+  //       case "bbc-humid":
+  //         setHumidity(message.toString());
+  //         break;
+  //       case "bbc-temp":
+  //         setTemperature(message.toString());
+  //         break;
+  //       case "bbc-light":
+  //         setLightIntensity(message.toString());
+  //         break;
+  //       case "bbc-fan":
+  //         setAirBtn(message.toString());
+  //         break;
+  //       case "bbc-pump":
+  //         setPumperBtn(message.toString());
+  //         break;
+  //       case "bbc-led":
+  //         setLightBtn(message.toString());
+  //         break;
+  //       default:
+  //         break;
+  //     }
+  //   });
+  // }
 
   return (
     <ColorModeContext.Provider value={colorMode}>

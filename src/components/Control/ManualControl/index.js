@@ -3,7 +3,7 @@ import { FormLabel, Typography, Stack, FormGroup } from '@mui/material'
 import ControlSwitch from './ControlSwitch'
 import { useGlobalContext } from '../../../context/index'
 const ManualControl = () => {
-    const {lightBtn,airBtn,pumperBtn} = useGlobalContext()
+    const {lightBtn,airBtn} = useGlobalContext()
     
     const devices= [
         { 

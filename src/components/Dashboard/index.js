@@ -21,6 +21,7 @@ import { useState, useEffect } from "react";
 const labels = ["Mon", "Tue", "Thir", "Wed", "Fri", "Sat", "Sun"];
 
 export default function Dashboard() {
+  console.log("run in dashboard")
   const theme = useTheme();
   const [mode, setMode] = useState(0);
   const { temperature, humidity, lightIntensity, weatherStatus } =
@@ -48,6 +49,7 @@ export default function Dashboard() {
     },
   ]);
   useEffect(() => {
+    console.log("getting data")
     const getAllData = async () => {
       setData([
         {

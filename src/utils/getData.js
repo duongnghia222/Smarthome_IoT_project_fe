@@ -10,5 +10,6 @@ export default async function getData (feed_id){
         }
       };
     let res = await axios.get(url, options);
+    console.log("sent request ")
     return res.data.map(e=>e.value).reverse();
 }

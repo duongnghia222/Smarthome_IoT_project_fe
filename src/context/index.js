@@ -3,9 +3,12 @@ import axios from 'axios';
 import { publish } from '../utils/adafruit'
 const key = process.env.REACT_APP_KEY
 const username = process.env.REACT_APP_NAME
+const storedUser = localStorage.getItem("user");
 
 
 async function getLastValue (feed_id){
+    
+    console.log("in getlastval in context")
     const url = `https://io.adafruit.com/api/v2/${username}/feeds/${feed_id}/data/?limit=1`;
     const options = {
         headers: {
@@ -24,7 +27,6 @@ const AppProvider = (props)=>{
     const [lightIntensity, setLightIntensity] = useState(0);
     const [humidity, setHumidity] = useState(0);
     const [lightBtn, setLightBtn] = useState(false);
-    const [pumperBtn, setPumperBtn] = useState(false);
     const [airBtn, setAirBtn] = useState(false);
     const [weatherStatus, setWeatherStatus] = useState("Good");
     const [ControlNumF, setControlNumF] = useState("");
@@ -37,10 +39,12 @@ const AppProvider = (props)=>{
         setLightIntensity(await getLastValue('bbc-light'));
         setHumidity(await getLastValue('bbc-humid'));
         setLightBtn(await getLastValue('bbc-led'));
-        setPumperBtn(await getLastValue('bbc-pump'));
         setAirBtn(await getLastValue('bbc-fan'));
        }
-       defaultValue()
+       if (storedUser !== 'null'){
+        defaultValue()
+       }
+       
     },[]);
 
     if (ControlNumF !== "From" && parseInt(ControlNumF) >= parseInt(temperature) && hasControl){
@@ -57,7 +61,7 @@ const AppProvider = (props)=>{
     return <AppContext.Provider 
     value={{temperature,setTemperature,
         lightIntensity,setLightIntensity,humidity,
-        setHumidity,lightBtn,setLightBtn,pumperBtn,setPumperBtn,airBtn,setAirBtn,weatherStatus,setWeatherStatus,
+        setHumidity,lightBtn,setLightBtn,airBtn,setAirBtn,weatherStatus,setWeatherStatus,
         setControlNumF, setControlNumT, setHasControl, hasControl
     }}
     >
