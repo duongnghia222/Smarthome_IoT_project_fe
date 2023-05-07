@@ -1,40 +1,57 @@
-import mqtt from "precompiled-mqtt";
-const key = process.env.REACT_APP_KEY
-const username = process.env.REACT_APP_NAME
-console.log(username)
+// import mqtt from "precompiled-mqtt";
+// import axios from 'axios';
 
-const brokerUrl = `mqtts://${username}:${key}@io.adafruit.com`
-const options = {
-    port: 443
-}
+// const key = process.env.REACT_APP_KEY
+// const username = process.env.REACT_APP_NAME
+// console.log("in adaf.js")
 
-const client = mqtt.connect(brokerUrl,options);
-client.on('connect', () => {
-    console.log("Connected to Adafruit!")
-});
-client.on('disconnect', () => {
-    console.log("Disconnected to Adafruit!")
-})
 
-client.on('message', (topic, message, packet) => {
-        console.log("Received '" + message + "' on '" + topic + "'");
-})
 
-function subscribe(feed_id){
-    client.subscribe(username + "/feeds/" + feed_id,()=>{
-        console.log("Subscribed to " + feed_id)
-    })
-}
-subscribe('bbc-humid')
-subscribe('bbc-light')
-// subscribe('weather-status')
-subscribe('bbc-temp')
-subscribe('bbc-fan')
-subscribe('bbc-led')
+// export async function getData (feed_id){
+//     const url = `https://io.adafruit.com/api/v2/${username}/feeds/${feed_id}/data?limit=7`;
+//     const options = {
+//         headers: {
+//           'X-AIO-Key': key,
+//         }
+//       };
+//     let res = await axios.get(url, options);
+//     console.log("sent request ")
+//     return res.data.map(e=>e.value).reverse();
+// }
 
-export default client;
-export function publish(feed_id,data){
-    client.publish(username + "/feeds/" + feed_id,data,()=>{
-        console.log("Published to " + feed_id + " : " + data);
-    })
-}
+// const brokerUrl = `mqtts://${username}:${key}@io.adafruit.com`
+// const options = {
+//     port: 443
+// }
+
+// const client = mqtt.connect(brokerUrl,options);
+// client.on('connect', () => {
+//     console.log("Connected to Adafruit!")
+// });
+// client.on('disconnect', () => {
+//     console.log("Disconnected to Adafruit!")
+// })
+
+// client.on('message', (topic, message, packet) => {
+//         console.log("Received '" + message + "' on '" + topic + "'");
+// })
+
+// function subscribe(feed_id){
+//     client.subscribe(username + "/feeds/" + feed_id,()=>{
+//         console.log("Subscribed to " + feed_id)
+//     })
+// }
+// subscribe('bbc-humid')
+// subscribe('bbc-light')
+// // subscribe('weather-status')
+// subscribe('bbc-temp')
+// subscribe('bbc-fan')
+// subscribe('bbc-led')
+
+// export default client;
+// export function publish(feed_id,data){
+//     console.log("publishing")
+//     client.publish(username + "/feeds/" + feed_id,data,()=>{
+//         console.log("Published to " + feed_id + " : " + data);
+//     })
+// }

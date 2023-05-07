@@ -1,7 +1,7 @@
 import React from 'react'
 import DiagData from '../DiagData/DiagData';
 import "./style.scss"
-import getData from '../../utils/getData';
+import { getData } from '../../utils/adafruit';
 import { useTheme } from '@emotion/react';
 
 const labels = ['Mon', 'Tue', 'Thir', 'Wed', 'Fri', 'Sat', 'Sun'];

@@ -14,7 +14,7 @@ import "./style.scss";
 import DiagData from "../DiagData/DiagData";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useGlobalContext } from "../../context/index";
-import getData from "../../utils/getData";
+import { getData } from "../../utils/adafruit";
 import { useTheme } from "@emotion/react";
 import { useState, useEffect } from "react";
 
